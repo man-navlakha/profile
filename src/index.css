@@ -1,5 +1,6 @@
 body{
     background-color: #fcf5eb;
+    user-select: none;
 }
 
 @tailwind base;
