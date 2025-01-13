@@ -15,9 +15,9 @@ const Fea = () => {
     <div className="container mx-auto p-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="mb-6 w-max md:mb-0">
-          <h1 className="text-4xl font-bold mb-2">
-            Other download options
-          </h1>
+        <h1 className="text-4xl font-bold mb-2 break-words w-full">
+  Here are some project as a BCA student
+</h1>
           <p className="text-lg text-gray-600 mb-4">
             Stay connected with friends and family across your devices.
           </p>

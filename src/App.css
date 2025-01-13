@@ -4,8 +4,9 @@
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    width: 0;
+    width: 10%;
     height: 0;
+    bottom: -10%;
     background-color: #1c1e21;
     border-radius: 50%;
     transition: width 0.3s ease, height 0.3s ease, top 0.3s ease;
@@ -22,6 +23,38 @@
 }
 
 .hover-effect span, .hover-effect i {
+    position: relative;
+    z-index: 1;
+    /* color: #fff; */
+}
+
+
+
+.hover-effect-ww::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 0;
+    bottom: -10%;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease;
+    z-index: 0;
+    color: #1c1e21;
+}
+
+.hover-effect-ww:hover::before {
+    top: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    color: #1c1e21;
+}
+
+.hover-effect-ww span, .hover-effect-ww i {
     position: relative;
     z-index: 1;
     /* color: #fff; */

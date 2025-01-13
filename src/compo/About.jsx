@@ -6,18 +6,15 @@ import mhs from '../assets/mhs.png';
 
 const About = () => {
   return (
-    <div class="text-center mx-54 lg:text-3xl text-xl font-semibold text-gray-800 p-12">
-    <img src={ho} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt="" srcset="" />
-    <img src={mho} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt="" srcset="" />
+    <div className="text-center mx-54 lg:text-3xl text-xl font-semibold text-gray-800 p-12">
+    <img src={ho} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt=""  />
+    <img src={mho} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt=""  />
     <div className='pt-4 pb-8'>
-    I'm a full-stack engineer helping digital founders build unique web experiences that make their products stand out and attract more investors.
+    Skilled IT pro with a solid background in desktop and system support. Focuses on keeping things running. Good at fixing hardware and software problems, setting up operating systems, and looking after network systems. Has experience helping with tech issues for more than 50+ workstations. Make sure they work well and stay secure by taking care of them and upgrading when needed. Known to solve problems well, pay close attention.
 
-I specialize in crafting pixel-perfect frontend applications.
-
-Off the clock, I dive into photography, geek out on the latest gadgets , and play games like a 12-year-old.
 </div>
-    <img src={hs} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt="" srcset="" />
-    <img src={mhs} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt="" srcset="" />
+    <img src={hs} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt=""  />
+    <img src={mhs} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt=""  />
     </div>
   )
 }
