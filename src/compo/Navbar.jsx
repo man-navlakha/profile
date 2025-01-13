@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <i
             id="menu-icon"
-            className={`fas ${menuOpen ? 'fa-times text-gray-200 px-[10px]' : 'fa-bars'} px-2 ease-in duration-150 text-gray-800 text-xl`}
+            className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars'} px-2 ease-in duration-150 text-gray-800 text-xl`}
             onClick={toggleMenu}
           ></i>
         </div>
