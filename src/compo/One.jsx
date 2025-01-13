@@ -36,7 +36,7 @@ const One = () => {
                 <div className="relative">
 
 
-                    <img alt="A mother and child smiling and hugging" className="rounded-lg h-auto w-[412px] shadow-lg" src={photo} />
+                    <img alt="man's" className=" rounded-lg h-auto w-[412px] shadow-lg" src={photo} />
 
 
                     <div className="absolute top-4 left-4 bg-white rounded-md px-4 py-2 flex items-center shadow">

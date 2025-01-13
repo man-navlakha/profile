@@ -113,7 +113,7 @@ const Navbar = () => {
 
 
       {/* Fullscreen Menu */}
-      <div id="fullscreen-menu" className={`fixed divide-y  ease-in duration-150   inset-0 bg-[#1c1e21] top-0 bottom-0 flex h-screen  z-40 ${menuOpen ? '' : 'hidden'}`}>
+      <div id="fullscreen-menu" className={`fixed divide-y lg:hidden sm:block md:block  ease-in duration-150   inset-0 bg-[#1c1e21] top-0 bottom-0 flex h-screen  z-40 ${menuOpen ? '' : 'hidden'}`}>
         <i
           id="close-icon"
           className="fas fa-times absolute top-4 right-4  ease-in duration-150  text-white text-2xl"
