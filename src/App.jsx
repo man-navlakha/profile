@@ -3,9 +3,16 @@ import './App.css';
 import Cont from './page/Cont';
 import Home from './page/Home';
 
+
 function App() {
+
+
   return (
-    <div className="hello overflow-hidden">
+    <div className="man-cursor hello overflow-hidden">
+
+<div className="cursor ">
+    
+      </div>
         {/* <Navbar />
         <One />
         <About />
