@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {  Link  } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,11 +36,11 @@ const Navbar = () => {
         <div className="flex items-center">
 
 
-          <div className="text-green-600 text-2xl font-bold">Man Navlakha</div>
+          <div className="flex-none text-green-600 text-2xl font-bold">Man Navlakha</div>
 
 
-          <div className="  mx-auto">
-            <ul className="flex space-x-4 items-center cursor-pointer ease-in duration-150 text-xl">
+          <div className=" shrink  mx-auto">
+            <ul className="flex space-x-14 shrink  items-center cursor-pointer ease-in duration-150 text-xl">
               <li className="flex items-center  hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150  cursor-pointer" onClick={toggleFeatures}>
                 Experiances
                 <i className={`fas ${submenuOpen ? 'fa-minus' : 'fa-plus'} p-2 hover:no-underline no-underline text-sm ease-in duration-150`} id="plus-icon"></i>
@@ -57,8 +58,8 @@ const Navbar = () => {
             </ul>
           </div>
 
-
-          <button className="bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
+          {/* <Link to="/contact" className="text-white">Contact</Link> */}
+          <button className="  flex-none bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
             <span>Hire me!</span>
             <i className="fas fa-briefcase ml-2"></i>
           </button>

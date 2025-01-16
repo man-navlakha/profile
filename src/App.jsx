@@ -1,21 +1,20 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './compo/Navbar';
-import One from './compo/One';
-import Fea from './compo/Fea';
-import About from './compo/About';
+import Cont from './page/Cont';
+import Home from './page/Home';
 
 function App() {
   return (
-    <Router>
-        <Navbar />
-      <div className="hello overflow-hidden">
+    <div className="hello overflow-hidden">
+        {/* <Navbar />
         <One />
         <About />
-        <Fea />
-        {/* Other components */}
+        <Fea /> */}
+        <Routes >
+          <Route path='/' element={<Home />} />
+          <Route path='/contect' element={<Cont />} />
+        </Routes>
       </div>
-    </Router>
   );
 }
 
