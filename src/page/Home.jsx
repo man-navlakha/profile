@@ -10,7 +10,7 @@ const Home = () => {
       <Navbar />
       <One />
       <About />
-      <Fea />
+      <Fea id="expre"/>
     </div>
   )
 }

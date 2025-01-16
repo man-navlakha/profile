@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {  Link  } from 'react-router-dom';
 
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
@@ -36,15 +37,17 @@ const Navbar = () => {
         <div className="flex items-center">
 
 
-          <div className="flex-none text-green-600 text-2xl font-bold">Man Navlakha</div>
+          <div className="flex-none text-green-600 text-2xl mr-8 font-bold">Man Navlakha</div>
 
 
           <div className=" shrink  mx-auto">
-            <ul className="flex space-x-14 shrink  items-center cursor-pointer ease-in duration-150 text-xl">
+            <ul className="flex space-x-8 shrink  items-center cursor-pointer ease-in duration-150 text-xl">
+              <Link>
               <li className="flex items-center  hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150  cursor-pointer" onClick={toggleFeatures}>
                 Experiances
                 <i className={`fas ${submenuOpen ? 'fa-minus' : 'fa-plus'} p-2 hover:no-underline no-underline text-sm ease-in duration-150`} id="plus-icon"></i>
               </li>
+              </Link>
               <ul className={` ${submenuOpen ? '' : 'hidden'} flex space-x-4 `} id="features-submenu">
                 <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Feature 1</li>
                 <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Feature 2</li>

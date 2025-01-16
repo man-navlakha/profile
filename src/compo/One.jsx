@@ -1,6 +1,7 @@
 import React from 'react'
 import photo from '../assets/photo.jpg'; // Adjust the path as necessary
 import '../App.css';
+import rpdf from '../assets/resume/RESUME.pdf';
 
 
 
@@ -17,12 +18,14 @@ const One = () => {
                 </p>
 
                 <div className="flex justify-center lg:justify-start mt-6 p-4 text-sm lg:text-base w-screen">
-                    <button className="bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
+                    <a href={rpdf} >
+                    <button title='If do you want to download my resume click here' className="bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
                         <span> Download Resume </span>
                         <i className="fas fa-download ml-2">
                         </i>
                     </button>
-                    <button className=" bg-white hover:text-white  whitespace-nowrap ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
+                    </a>
+                    <button title='To reach me click here' className=" bg-white hover:text-white  whitespace-nowrap ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
                         <span>
                             Contect me
                         </span>
