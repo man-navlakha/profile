@@ -36,9 +36,9 @@ const Navbar = () => {
 
         <div className="flex items-center">
 
-
+<Link to="/" >
           <div className="flex-none text-green-600 text-2xl mr-8 font-bold">Man Navlakha</div>
-
+</Link>
 
           <div className=" shrink  mx-auto">
             <ul className="flex space-x-8 shrink  items-center cursor-pointer ease-in duration-150 text-xl">
@@ -61,7 +61,7 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* <Link to="/contact" className="text-white">Contact</Link> */}
+         
           <button className="  flex-none bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
             <span>Hire me!</span>
             <i className="fas fa-briefcase ml-2"></i>
@@ -97,10 +97,12 @@ const Navbar = () => {
           ></i>
         </div>
         <div className="flex items-center  ease-in duration-150">
+        {/* <Link to="/"> */}
           <div
             className={` ease-in duration-150 text-[#25d366] font-bold text-2xl font`}>
             Man Navlakha</div>
         </div>
+        {/* </Link> */}
         <div
           className="flex items-center" >
           <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect`} >

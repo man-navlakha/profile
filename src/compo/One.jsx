@@ -51,7 +51,7 @@ const One = () => {
                             <p className="text-xs text-right text-gray-500">
                                 Today, 13:04
                             </p>
-                            <div className="absolute top-3 -left-3 Z-10 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white rotate-45">
+                            <div className="absolute top-3 -left-3 Z-10 transform translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded bg-white rotate-[55deg]">
                             </div>
                         </div>
                         <i className="fa-solid fa-message ml-2 text-gray-500">
