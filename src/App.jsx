@@ -3,13 +3,15 @@ import './App.css';
 import Cont from './page/Cont';
 import Home from './page/Home';
 import NotFound from './compo/NotFound';
+import Navbar from './compo/Navbar';
 
 
 function App() {
 
 
-  return (
-    <div className="man-cursor hello overflow-hidden">
+  return ( 
+    <div className="sticky top-0">
+      <Navbar />
 {/* 
 <div className="cursor ">
     

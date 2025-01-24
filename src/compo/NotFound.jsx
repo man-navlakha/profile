@@ -7,7 +7,6 @@ const NotFound = () => {
   return (
     <div className="full">
 
-      <Navbar />
     <div className="lg:p-56 md:p-12 grid lg:grid-cols-2 gap-4 ">
 
       <div className=" md:text-left md:p-[24px]">

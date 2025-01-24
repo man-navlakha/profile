@@ -25,6 +25,7 @@ const One = () => {
                         </i>
                     </button>
                     </a>
+                    <a href="/contect">
                     <button title='To reach me click here' className=" bg-white hover:text-white  whitespace-nowrap ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
                         <span>
                             Contect me
@@ -32,6 +33,7 @@ const One = () => {
                         <i className="fas fa-mobile ml-2">
                         </i>
                     </button>
+                    </a>
                 </div>
             </div>
 

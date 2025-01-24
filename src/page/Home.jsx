@@ -7,7 +7,6 @@ import Fea from '../compo/Fea'
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <One />
       <About />
       <Fea id="expre"/>

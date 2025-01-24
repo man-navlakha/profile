@@ -37,7 +37,7 @@ nav{
 img {
     animation: apo linear;
     animation-timeline: view();
-    animation-range: entry 30%;
+    animation-range: entry 10%;
     cursor: hidden;
 }
 
