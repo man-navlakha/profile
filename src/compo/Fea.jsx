@@ -44,7 +44,7 @@ const Fea = () => {
                 beta app
               </a>.
             </p>
-            <a className="text-blue-500 underline flex items-center" href="#">
+            <a className="text-blue-500 underline flex items-center" href="/efduh">
               Download
               <i className="fas fa-chevron-right ml-1"></i>
             </a>

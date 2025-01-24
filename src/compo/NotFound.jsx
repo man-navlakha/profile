@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Wm from '../assets/wrong.png';
 
 const NotFound = () => {
   return (
@@ -25,9 +26,7 @@ const NotFound = () => {
          </div>
         
       <div className="text-center md:text-left md:mr-8">
-            <h1 className="text-6xl font-bold text-black">404.</h1>
-            <p className="text-4xl font-light text-black mt-4">This page doesn't exist.</p>
-            <button className="mt-8 px-6 py-3 border border-black rounded-full text-black hover:bg-gray-200 transition">Return home</button>
+            <img src={Wm} alt="wrong png" srcset="" />
         </div>
 
 
