@@ -65,7 +65,11 @@ const Navbar = () => {
                 </li>
               </Link>
 
-              <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Projects</li>
+              <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
+                <Link to={"/projects"}>
+                Projects
+                </Link>
+                </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Skills</li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Download Resume </li>
               <li>
@@ -230,23 +234,23 @@ const Navbar = () => {
         <ul className="divide-y text-white  ease-in duration-150 mt-16 w-screen overflow-scroll bottom-0 text-2xl">
           <li className="p-4 px-6 hover:bg-[#21262d]">
             <Link to="/" >
-            Home
+              Home
             </Link></li>
           <li className="p-4 px-6 hover:bg-[#21262d] flex flex-col cursor-pointer" onClick={toggleFeatures}>
             <div className="svg flex items-center justify-between">
               Experiances
               <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-5.76 -5.76 35.52 35.52" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-              <svg  className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px"  viewBox="-12.8 -12.8 57.60 57.60" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path class="puchipuchi_een" d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"></path> </g></svg>
+              <svg className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px" viewBox="-12.8 -12.8 57.60 57.60" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path class="puchipuchi_een" d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"></path> </g></svg>
 
             </div>
 
 
             <ul className={` ${submenuOpen ? '' : 'hidden'} mt-2`} id="features-submenu">
-              
+
               <li className='mt-4 '>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start ">
                   <div className="w-[32]">
-                  <It />
+                    <It />
                   </div>
 
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
@@ -259,8 +263,8 @@ const Navbar = () => {
               </li>
               <li className='mt-4'>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start">
-                <div className="w-[32]">
-                  <Web />
+                  <div className="w-[32]">
+                    <Web />
                   </div>
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Web Development</h2>
@@ -272,8 +276,8 @@ const Navbar = () => {
               </li>
               <li className='mt-4'>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start">
-                <div className="w-[32]">
-                  <Android />
+                  <div className="w-[32]">
+                    <Android />
                   </div>
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Android Development</h2>
@@ -285,8 +289,8 @@ const Navbar = () => {
               </li>
               <li className='mt-4'>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start">
-                <div className="w-[32]">
-                  <Windows />
+                  <div className="w-[32]">
+                    <Windows />
                   </div>
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Windows Application</h2>
@@ -298,8 +302,8 @@ const Navbar = () => {
               </li>
               <li className='mt-4'>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start">
-                <div className="w-[32]">
-                  <Python />
+                  <div className="w-[32]">
+                    <Python />
                   </div>
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Python  Development</h2>
@@ -311,8 +315,8 @@ const Navbar = () => {
               </li>
               <li className='mt-4'>
                 <div class="fill-green-500  text-[#1c1e21] flex justify-start">
-                <div className="w-[32]">
-                  <Graphic />
+                  <div className="w-[32]">
+                    <Graphic />
                   </div>
                   <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
  under-ani"> Graphic Design</h2>
@@ -324,7 +328,9 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li className="p-4 px-6 hover:bg-[#21262d] ">Projects</li>
+          <li className="p-4 px-6 hover:bg-[#21262d] ">  <Link to={"/projects"}>
+                Projects
+                </Link></li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Skills</li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
