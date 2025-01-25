@@ -46,3 +46,28 @@ img {
 body{
     cursor: url('./assets/Cursor-PNG-Pic.png'), auto;
 }
+
+
+.under-ani {
+    position: relative;
+    color: #22c55e;
+    font-weight: 600;
+    margin-left: 2rem;
+    text-decoration-thickness:2px;
+  }
+  
+  .under-ani::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #22c55e;
+    transition: width 1s ease-in-out;
+  }
+  
+  .under-ani:hover::after {
+    width: 100%;
+  }
+  
