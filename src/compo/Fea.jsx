@@ -1,4 +1,5 @@
 import React from 'react';
+import RightArrow from './svg/right';
 
 function scrollLeft() {
     const container = document.getElementById('cardContainer');
@@ -33,6 +34,21 @@ const Fea = () => {
         <div id="cardContainer" className="flex -m-4 overflow-x-auto max-w-full p-4 space-x-4">
           <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
+              Windows App
+            </h2>
+            <h3 className="text-2xl font-bold mb-2">
+              System App for Windows
+            </h3>
+            <p className="text-gray-700 mb-4">
+              In this app we will show the system information of the windows. This app is made in python.
+            </p>
+            <a className="text-blue-500 underline flex items-center" href="/efduh">
+              View Project
+              <RightArrow />
+            </a>
+          </div>
+          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
+            <h2 className="text-sm text-gray-500 mb-1">
               Desktop
             </h2>
             <h3 className="text-2xl font-bold mb-2">
@@ -47,88 +63,6 @@ const Fea = () => {
             <a className="text-blue-500 underline flex items-center" href="/efduh">
               Download
               <i className="fas fa-chevron-right ml-1"></i>
-            </a>
-          </div>
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Desktop
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Mac
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Get calling, screen sharing and faster experience with the Mac app. Requires macOS 11 or newer. Test our latest features by downloading our
-              <a className="text-blue-500 underline" href="#">
-                beta app
-              </a>.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="#">
-              Download
-              <i className="fas fa-chevron-right ml-1"></i>
-            </a>
-          </div>
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Desktop
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Mac
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Get calling, screen sharing and faster experience with the Mac app. Requires macOS 11 or newer. Test our latest features by downloading our
-              <a className="text-blue-500 underline" href="#">
-                beta app
-              </a>.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="#">
-              Download
-              <i className="fas fa-chevron-right ml-1"></i>
-            </a>
-          </div>
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Mobile/Tablet
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              iOS
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Minimum Requirements (Version 22.13.74): iOS 12.0 or newer.
-            </p>
-            <a href="#">
-              <img alt="Download on the App Store" src="https://placehold.co/150x50?text=Download+on+the+App+Store"/>
-            </a>
-          </div>
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Desktop
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Mac
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Get calling, screen sharing and faster experience with the Mac app. Requires macOS 11 or newer. Test our latest features by downloading our
-              <a className="text-blue-500 underline" href="#">
-                beta app
-              </a>.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="#">
-              Download
-              <i className="fas fa-chevron-right ml-1"></i>
-            </a>
-          </div>
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Mobile/Tablet
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              iOS
-            </h3>
-            <p className="text-gray-700 mb-4">
-              Minimum Requirements (Version 22.13.74): iOS 12.0 or newer.
-            </p>
-            <a href="#">
-              <img alt="Download on the App Store" src="https://placehold.co/150x50?text=Download+on+the+App+Store"/>
             </a>
           </div>
         </div>
