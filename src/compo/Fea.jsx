@@ -12,7 +12,7 @@ function scrollRight() {
 
 const Fea = () => {
   return (
-    <div className="container mx-auto p-6">
+    <div className="container cardContainer p-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
       <div className="mb-6 w-full md:w-max p-2 md:mb-0">
           <h1 className="text-3xl sm:text-2xl font-bold mb-2 w-full whitespace-normal break-words">

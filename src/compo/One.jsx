@@ -7,7 +7,7 @@ import rpdf from '../assets/resume/RESUME.pdf';
 
 const One = () => {
     return (
-        <div className="container mx-auto px-4 py-16 flex flex-col lg:flex-row items-center">
+        <div className="container py-16 px-4 flex -mr-4 flex-col lg:flex-row items-center">
             
             <div className="lg:w-1/2 text-center -mt-1/2 lg:text-left mb-8 lg:mb-0">
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 p-2">
@@ -37,14 +37,14 @@ const One = () => {
                 </div>
             </div>
 
-            <div className="lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="lg:w-1/2  flex justify-center lg:justify-end">
                 <div className="relative">
 
 
                     <img alt="man's" className=" rounded-lg h-auto w-[412px] shadow-lg" src={photo} />
 
 
-                    <div className="absolute top-4 left-4 bg-white rounded-md px-4 py-2 flex items-center shadow">
+                    <div className="absolute top-4 left-4 bg-white rounded-md px-2 py-2 flex items-center shadow">
                         <img alt="Profile picture of Ayesha Pawar" className="w-8 h-8 object-cover rounded-full mr-2" src="https://th.bing.com/th/id/OIP.XSZAFm-5JI7nriDLwZqRQQHaE7?w=261&h=180&c=7&r=0&o=5&pid=1.7" />
                         <div>
                             <p className="text-sm font-semibold">
@@ -77,21 +77,7 @@ const One = () => {
 
 
 
-                    <div className="absolute bottom-52  bg-white rounded-full px-4 py-2 flex left-4 items-center shadow">
-                        <i className="fas fa-play text-gray-500 mr-2">
-                        </i>
-                        <div className="flex items-center">
-                            <div className="w-24 h-1 bg-gray-300 rounded-full mr-2">
-                                <div className="w-12 h-1 bg-green-500 rounded-full">
-                                </div>
-                            </div>
-                            <span className="text-xs text-gray-500">
-                                0:03
-                            </span>
-                        </div>
-                        <img alt="Profile picture of a person" className="w-8 h-8 rounded-full ml-2" src="https://th.bing.com/th/id/OIP.M5-JX2Wq3fC1NLiqBe1j4wHaGl?w=900&h=800&rs=1&pid=ImgDetMain" />
-
-                    </div>
+                  
                     <div className="absolute bottom-1 right-4 bg-white rounded-lg shadow-lg p-2">
                         <img alt="A child and an elderly person writing together" className="rounded-lg w-64 h-auto" src="https://i.ytimg.com/vi/eJYofPwxfbw/maxresdefault.jpg" />
                         <p className="text-sm font-semibold">

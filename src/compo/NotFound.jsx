@@ -19,7 +19,9 @@ const NotFound = () => {
               </h1>
               <button title='To reach me click here' className=" bg-white hover:text-white  whitespace-nowrap ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
                         <span>
-                            Return home
+                           <Link to={"/"}>
+                           Return home
+                           </Link> 
                         </span>
                     </button>
          </div>

@@ -1,7 +1,10 @@
 import React from 'react';
+import Navbar from '../compo/Navbar';
 
 const Cont = () => {
   return (
+    <>
+    <Navbar />
     <div className="container mx-auto p-6">
       <h1 className="text-4xl font-bold mb-4 text-center">Contact Me</h1>
       <p className="text-lg text-gray-700 mb-8 text-center">
@@ -69,6 +72,7 @@ const Cont = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

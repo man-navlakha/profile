@@ -7,9 +7,10 @@ import Fea from '../compo/Fea'
 const Home = () => {
   return (
     <div>
+      <Navbar />  
       <One />
       <About />
-      <Fea id="expre"/>
+      {/* <Fea id="expre"/> */}
     </div>
   )
 }

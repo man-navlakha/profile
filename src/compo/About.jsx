@@ -6,7 +6,7 @@ import mhs from '../assets/mhs.png';
 
 const About = () => {
   return (
-    <div className="text-center mx-54 lg:text-3xl text-xl font-semibold text-gray-800 p-12">
+    <div className="text-center lg:text-3xl text-xl font-semibold text-gray-800 p-[8px]">
     <img src={ho} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt=""  />
     <img src={mho} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt=""  />
     <div className='pt-4 pb-8'>

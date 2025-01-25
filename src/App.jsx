@@ -10,13 +10,7 @@ function App() {
 
 
   return ( 
-    <div className="sticky top-0">
-      <Navbar />
-{/* 
-<div className="cursor ">
-    
-      </div> */}
-
+    <div >
       
         <Routes >
           <Route path='*' element={<NotFound />} />
