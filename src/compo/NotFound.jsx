@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
-import Wm from '../assets/wrong.png';
+import Wm from '../assets/Wrong.png';
 
 const NotFound = () => {
   return (
