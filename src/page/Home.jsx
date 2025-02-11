@@ -3,6 +3,7 @@ import Navbar from '../compo/Navbar'
 import One from '../compo/One'
 import About from '../compo/About'
 import Fea from '../compo/Fea'
+import Edu from '../compo/Edu'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <One />
       <About />
       <Fea id="expre"/>
+      <Edu />
     </div>
   )
 }

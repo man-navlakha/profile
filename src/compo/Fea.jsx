@@ -47,6 +47,7 @@ const Fea = () => {
               <RightArrow />
             </a>
           </div>
+
           <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
               Desktop
@@ -65,6 +66,7 @@ const Fea = () => {
               <i className="fas fa-chevron-right ml-1"></i>
             </a>
           </div>
+          
         </div>
       </div>
     </div>
