@@ -32,11 +32,6 @@ const Navbar = () => {
   return (
     <>
 
-
-
-
-
-
       {/* For Laptop */}
 
       <nav className={` ${submenuOpen ? 'bg-white' : 'bg-[rgba(252,245,235,0.8)] bg-[rgba(255, 255, 255)]'} px-8 transition-all duration-300 ease-in-out 
@@ -192,7 +187,7 @@ const Navbar = () => {
 
 
       {/* For Mobile */}
-      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden md:block backdrop-blur-sm p-4 z-50 border-b border-[#cec9c1] flex items-center justify-between p-2`}>
+      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50 border-b border-[#cec9c1] flex items-center justify-between p-2`}>
 
         <div className="flex items-center">
           <i
@@ -225,7 +220,7 @@ const Navbar = () => {
 
 
       {/* Fullscreen Menu */}
-      <div id="fullscreen-menu" className={`fixed divide-y lg:hidden md:block  ease-in duration-150 z-40  inset-0 bg-[#1c1e21] bottom-0 flex h-screen ${menuOpen ? '' : 'hidden'}`}>
+      <div id="fullscreen-menu" className={`fixed divide-y ease-in duration-150 z-40  inset-0 bg-[#1c1e21] bottom-0 flex h-screen  ${menuOpen ? '' : 'hidden'}`}>
         {/* <i
           id="close-icon"
           className="fas fa-times absolute top-4 right-4  ease-in duration-150  text-white text-xl"
