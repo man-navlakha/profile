@@ -4,6 +4,7 @@ import One from '../compo/One'
 import About from '../compo/About'
 import Fea from '../compo/Fea'
 import Edu from '../compo/Edu'
+import Footer from '../compo/Footer'
 
 const Home = () => {
   return (
@@ -11,8 +12,9 @@ const Home = () => {
       <Navbar />  
       <One />
       <About />
-      <Fea id="expre"/>
-      <Edu />
+      <Fea id="projects"/>
+      {/* <Edu /> */}
+      <Footer />
     </div>
   )
 }

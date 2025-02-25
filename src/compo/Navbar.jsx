@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
 import { Link } from 'react-router-dom';
 import It from './svg/It';
 import Web from './svg/Web';
@@ -12,6 +12,16 @@ import RightArrow from './svg/right';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const boxRef = useRef(null);
+
+  const handleScroll = () => {
+    if (boxRef.current.scrollTop > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -34,9 +44,14 @@ const Navbar = () => {
 
       {/* For Laptop */}
 
-      <nav className={` ${submenuOpen ? 'bg-white' : 'bg-[rgba(252,245,235,0.8)] bg-[rgba(255, 255, 255)]'} px-8 transition-all duration-300 ease-in-out 
-    border-b-2 
-    scroll-mt-16 border-b-gray-200 border-[#cec9c1] hidden lg:block md:hidden sm:hidden sticky top-0  backdrop-blur-sm p-4 z-50  `}>
+      <nav
+  ref={boxRef}
+  onScroll={handleScroll}
+  className={`px-8 transition-all duration-300 ease-in-out 
+    ${submenuOpen ? 'bg-white h-screen' : 'bg-[rgba(252,245,235,0.8)]'} 
+    ${isScrolled ? "border-b-2 border-black" : "border-none"} 
+    scroll-mt-16 border-b-gray-200 hidden lg:block sticky top-0 backdrop-blur-sm p-4 z-50`}
+>
 
         <div className="flex items-center">
 
@@ -45,14 +60,14 @@ const Navbar = () => {
           </Link>
 
           <div className=" shrink  mx-auto">
-            <ul className="flex space-x-8 shrink  items-center cursor-pointer ease-in duration-150 text-xl">
+            <ul className="flex space-x-8 shrink  items-center cursor-pointer ease-in duration-150 text-lg">
               <Link>
                 <li className="flex items-center  hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150  cursor-pointer" onClick={toggleFeatures}>
                   Experiances
 
                   <div className="svg">
-                    <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-1.68 -1.68 27.36 27.36" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="0.9600000000000002" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                    <svg className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px" viewBox="-1.68 -1.68 27.36 27.36" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, -1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="0.9600000000000002" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-1.68 -1.68 27.36 27.36" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#000000"  ></path> </g></svg>
+                    <svg className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px" viewBox="-1.68 -1.68 27.36 27.36" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, -1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#000000"  ></path> </g></svg>
 
                   </div>
 
@@ -61,7 +76,7 @@ const Navbar = () => {
               </Link>
 
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
-                <Link to={"/projects"}>
+                <Link to={"#projects"}>
                 Projects
                 </Link>
                 </li>
@@ -86,84 +101,84 @@ const Navbar = () => {
 
 
           <li className="">
-            <div class="hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
-              <div class="">
+            <div className="hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+              <div className="">
                 <It />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Information Technology Help Desk Technician</h2>
-              <p class=" mb-4">IT Hardware releted solutions</p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Information Technology Help Desk Technician</h2>
+              <p className=" mb-4">IT Hardware releted solutions</p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
 
           <li className="">
-            <div class="hover:bg-green-500   fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="hover:bg-green-500   fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div>
                 <Web />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Web Development</h2>
-              <p class=" mb-4">End-to-end web development support</p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Web Development</h2>
+              <p className=" mb-4">End-to-end web development support</p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
 
           <li className="">
-            <div class="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div >
                 <Android />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Android Development</h2>
-              <p class=" mb-4">A simple application using android studio</p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Android Development</h2>
+              <p className=" mb-4">A simple application using android studio</p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
           <li className="">
-            <div class="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
-              <div class="text-green-500 text-3xl mb-2 hover:">
+            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+              <div className="text-green-500 text-3xl mb-2 hover:">
                 <Windows />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Windows Application</h2>
-              <p class=" mb-4">A .net & c# application that makes business solutions</p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Windows Application</h2>
+              <p className=" mb-4">A .net & c# application that makes business solutions</p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
 
           <li className="">
-            <div class="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
-              <div class="">
+            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+              <div className="">
                 <Python />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Python Development</h2>
-              <p class=" mb-4">A windows application configration & development </p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Python Development</h2>
+              <p className=" mb-4">A windows application configration & development </p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
 
           <li className="">
-            <div class="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
-              <div class="text-green-500 text-3xl mb-2 hover:">
+            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+              <div className="text-green-500 text-3xl mb-2 hover:">
                 <Graphic />
               </div>
-              <h2 class="text-xl font-semibold mb-2">Graphic Design</h2>
-              <p class=" mb-4">Designing Logo, Mockups, PNG icons, etc</p>
-              <div class="">
+              <h2 className="text-xl font-semibold mb-2">Graphic Design</h2>
+              <p className=" mb-4">Designing Logo, Mockups, PNG icons, etc</p>
+              <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
-                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21" stroke-width="1.5"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21" stroke-width="1.5"></path> </g></svg>
+                <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </li>
@@ -234,8 +249,8 @@ const Navbar = () => {
           <li className="p-4 px-6 hover:bg-[#21262d] flex flex-col cursor-pointer" onClick={toggleFeatures}>
             <div className="svg flex items-center justify-between">
               Experiances
-              <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-5.76 -5.76 35.52 35.52" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-              <svg className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px" viewBox="-12.8 -12.8 57.60 57.60" fill="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path class="puchipuchi_een" d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"></path> </g></svg>
+              <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-5.76 -5.76 35.52 35.52" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#fff" ></path> </g></svg>
+              <svg className={`${submenuOpen ? 'visible' : 'hidden'}`} width="32px" height="32px" viewBox="-12.8 -12.8 57.60 57.60" fill="#fff"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"><path className="puchipuchi_een" d="M26,16c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2s0.896-2,2-2h16C25.104,14,26,14.896,26,16z"></path> </g></svg>
 
             </div>
 
@@ -243,79 +258,79 @@ const Navbar = () => {
             <ul className={` ${submenuOpen ? '' : 'hidden'} mt-2`} id="features-submenu">
 
               <li className='mt-4 '>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start ">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start ">
                   <div className="w-[32]">
                     <It />
                   </div>
 
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> IT help desk support</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
 
               </li>
               <li className='mt-4'>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                   <div className="w-[32]">
                     <Web />
                   </div>
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Web Development</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
 
               </li>
               <li className='mt-4'>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                   <div className="w-[32]">
                     <Android />
                   </div>
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Android Development</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
 
               </li>
               <li className='mt-4'>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                   <div className="w-[32]">
                     <Windows />
                   </div>
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Windows Application</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
 
               </li>
               <li className='mt-4'>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                   <div className="w-[32]">
                     <Python />
                   </div>
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Python  Development</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
 
               </li>
               <li className='mt-4'>
-                <div class="fill-green-500  text-[#1c1e21] flex justify-start">
+                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                   <div className="w-[32]">
                     <Graphic />
                   </div>
-                  <h2 class="text-[#22c55e] font-semibold text-lg underline-offset-4
+                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
  under-ani"> Graphic Design</h2>
-                  <div class="">
+                  <div className="">
                     <RightArrow />
                   </div>
                 </div>
