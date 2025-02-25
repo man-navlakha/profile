@@ -40,9 +40,9 @@ const Fea = () => {
               System App for Windows
             </h3>
             <p className="text-gray-700 mb-4">
-              In this app we will show the system information of the windows. This app is made in python.
+              In this app we will show the system information of the windows.
             </p>
-            <a className="text-blue-500 underline flex items-center" href="/efduh">
+            <a className="text-blue-500 underline flex items-center" href="https://github.com/man-navlakha/system-app">
               View Project
               <RightArrow />
             </a>
@@ -50,22 +50,38 @@ const Fea = () => {
 
           <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
-              Desktop
+              Website
             </h2>
             <h3 className="text-2xl font-bold mb-2">
-              Mac
+              Portfolio
             </h3>
             <p className="text-gray-700 mb-4">
-              Get calling, screen sharing and faster experience with the Mac app. Requires macOS 11 or newer. Test our latest features by downloading our
-              <a className="text-blue-500 underline" href="#">
-                beta app
-              </a>.
+              This is my portfolio website. I have made this website using ReactJs and TailwindCSS.
             </p>
-            <a className="text-blue-500 underline flex items-center" href="/efduh">
-              Download
-              <i className="fas fa-chevron-right ml-1"></i>
+            <a className="text-blue-500 underline flex items-center" href="https://man-navlakha.netlify.app/">
+              View Project
+              <RightArrow />
             </a>
           </div>
+
+
+          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
+            <h2 className="text-sm text-gray-500 mb-1">
+              Windows Tray App
+            </h2>
+            <h3 className="text-2xl font-bold mb-2">
+              Rent PC Security App for Windows
+            </h3>
+            <p className="text-gray-700 mb-4">
+              In this app we will show the shop & company details & massage from the Shop & comapny. This app is made in python.
+            </p>
+            <a className="text-blue-500 underline flex items-center" href="https://github.com/man-navlakha/system-app">
+              View Project
+              <RightArrow />
+            </a>
+          </div>
+          
+
           
         </div>
       </div>

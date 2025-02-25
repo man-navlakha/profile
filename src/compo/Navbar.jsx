@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import It from './svg/It';
 import Web from './svg/Web';
@@ -45,13 +45,13 @@ const Navbar = () => {
       {/* For Laptop */}
 
       <nav
-  ref={boxRef}
-  onScroll={handleScroll}
-  className={`px-8 transition-all duration-300 ease-in-out 
+        ref={boxRef}
+        onScroll={handleScroll}
+        className={`px-8 transition-all duration-300 ease-in-out 
     ${submenuOpen ? 'bg-white h-screen' : 'bg-[rgba(252,245,235,0.8)]'} 
     ${isScrolled ? "border-b-2 border-black" : "border-none"} 
     scroll-mt-16 border-b-gray-200 hidden lg:block sticky top-0 backdrop-blur-sm p-4 z-50`}
->
+      >
 
         <div className="flex items-center">
 
@@ -77,9 +77,9 @@ const Navbar = () => {
 
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
                 <Link to={"#projects"}>
-                Projects
+                  Projects
                 </Link>
-                </li>
+              </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Skills</li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Download Resume </li>
               <li>
@@ -339,8 +339,8 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">  <Link to={"/projects"}>
-                Projects
-                </Link></li>
+            Projects
+          </Link></li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Skills</li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
