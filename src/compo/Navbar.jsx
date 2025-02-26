@@ -12,16 +12,7 @@ import RightArrow from './svg/right';
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const boxRef = useRef(null);
-
-  const handleScroll = () => {
-    if (boxRef.current.scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -30,14 +21,27 @@ const Navbar = () => {
   const toggleFeatures = () => {
     setSubmenuOpen(!submenuOpen);
   };
+  
+useEffect(() => {
+  const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+  };
 
-  useEffect(() => {
-    if (menuOpen) {
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+useEffect(() => {
+  if (menuOpen) {
       document.body.classList.add('overflow-hidden');
-    } else {
+  } else {
       document.body.classList.remove('overflow-hidden');
-    }
-  }, [menuOpen]);
+  }
+
+  return () => {
+      document.body.classList.remove('overflow-hidden');
+  };
+}, [menuOpen]);
 
   return (
     <>
@@ -45,12 +49,10 @@ const Navbar = () => {
       {/* For Laptop */}
 
       <nav
-        ref={boxRef}
-        onScroll={handleScroll}
         className={`px-8 transition-all duration-300 ease-in-out 
     ${submenuOpen ? 'bg-white h-screen' : 'bg-[rgba(252,245,235,0.8)]'} 
-    ${isScrolled ? "border-b-2 border-black" : "border-none"} 
-    scroll-mt-16 border-b-gray-200 hidden lg:block sticky top-0 backdrop-blur-sm p-4 z-50`}
+    ${scrolled ? "border-b-2 border-[#cec9c1]" : ""}
+    scroll-mt-16 hidden lg:block sticky top-0 backdrop-blur-sm p-4 z-50`}
       >
 
         <div className="flex items-center">
@@ -97,7 +99,7 @@ const Navbar = () => {
         </div>
 
 
-        <ul className={` ${submenuOpen ? '' : 'hidden'} flex gap-[25px] flex-wrap justify-center pt-[16px] pb-[22px]`} id="features-submenu">
+        <ul className={` ${submenuOpen ? '' : 'hidden'} scroll-smooth flex gap-[25px] flex-wrap justify-center pt-[16px] pb-[22px]`} id="features-submenu">
 
 
           <li className="">
@@ -202,7 +204,7 @@ const Navbar = () => {
 
 
       {/* For Mobile */}
-      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50 border-b border-[#cec9c1] flex items-center justify-between p-2`}>
+      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
 
         <div className="flex items-center">
           <i
@@ -241,12 +243,12 @@ const Navbar = () => {
           className="fas fa-times absolute top-4 right-4  ease-in duration-150  text-white text-xl"
           onClick={toggleMenu}
         ></i> */}
-        <ul className="divide-y text-white  ease-in duration-150 mt-16 w-screen overflow-scroll bottom-0 text-2xl">
+        <ul className="divide-y text-white scroll-smooth ease-in duration-150 mt-16 w-screen overflow-scroll bottom-0 text-2xl">
           <li className="p-4 px-6 hover:bg-[#21262d]">
             <Link to="/" >
               Home
             </Link></li>
-          <li className="p-4 px-6 hover:bg-[#21262d] flex flex-col cursor-pointer" onClick={toggleFeatures}>
+          <li className="p-4 px-6 scroll-smooth  tm_man_open hover:bg-[#21262d] flex flex-col cursor-pointer" onClick={toggleFeatures}>
             <div className="svg flex items-center justify-between">
               Experiances
               <svg className={`${submenuOpen ? 'hidden' : 'visible'}`} width="32px" height="32px" viewBox="-5.76 -5.76 35.52 35.52" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M12 6V18" stroke="#fff" ></path> </g></svg>
@@ -254,8 +256,10 @@ const Navbar = () => {
 
             </div>
 
+          <div className='tm_man_open'>
 
-            <ul className={` ${submenuOpen ? '' : 'hidden'} mt-2`} id="features-submenu">
+         
+            <ul className={` ${submenuOpen ? 'scroll-smooth ' : 'hidden'} scroll-smooth tm_man_open mt-2`} id="features-submenu">
 
               <li className='mt-4 '>
                 <div className="fill-green-500  text-[#1c1e21] flex justify-start ">
@@ -337,6 +341,7 @@ const Navbar = () => {
 
               </li>
             </ul>
+            </div>
           </li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">  <Link to={"/projects"}>
             Projects

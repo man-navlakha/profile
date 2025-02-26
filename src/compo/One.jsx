@@ -10,14 +10,14 @@ const One = () => {
         <div className="container py-16 px-4 flex -mr-4 flex-col lg:flex-row items-center">
             
             <div className="lg:w-1/2 text-center -mt-1/2 lg:text-left mb-8 lg:mb-0">
-                <h1 className="text-5xl font-bold text-gray-900 mb-4 p-2">
+                <h1 className="text-5xl font-bold text-gray-900 mb-4 px-12">
                     Yourrr favvv IT Technician
                 </h1>
-                <p className="text-lg text-gray-700 pr-2 pl-2">
+                <p className="text-lg text-gray-700 px-12">
                     that you can trust, and rely on. Whether you need help with computer repairs, network setup, or software installation, I can help.
                 </p>
 
-                <div className="flex justify-center lg:justify-start mt-6 p-4 text-sm lg:text-base w-screen">
+                <div className="flex justify-center lg:justify-start mt-6 px-12 text-sm lg:text-base w-screen">
                     <a href={rpdf} >
                     <button title='If do you want to download my resume click here' className="bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
                         <span> Download Resume </span>

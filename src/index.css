@@ -1,13 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body{
     background-color: #fcf5eb;
     user-select: none;
     cursor: hidden;
-    overflow-x: hidden
+    overflow-x: hidden;
+    
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.tm_man_open{
+    max-height: 540px;
+    transition: max-height 5s ease-in-out;
+}
 
 #cardContainer {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
