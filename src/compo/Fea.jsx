@@ -37,8 +37,8 @@ const Fea = () => {
         </div>
         <div id="cardContainer" className="flex -m-4 overflow-x-auto block lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4">
 
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
+         <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
               Windows App
             </h2>
             <h3 className="text-2xl font-bold mb-2">
@@ -47,14 +47,19 @@ const Fea = () => {
             <p className="text-gray-700 mb-4">
               In this app we will show the system information of the windows.
             </p>
-            <a className="text-blue-500 underline flex items-center bottom-0" href="https://github.com/man-navlakha/system-app">
-              View Project
-              <RightArrow />
-            </a>
+           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-blue-500 underline flex items-center"
+      href="https://github.com/man-navlakha/system-app"
+    >
+      View Project
+      <RightArrow />
+    </a>
+  </div>
           </div>
 
-          <div className="bg-white w-[312px]   p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
+          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
               Website
             </h2>
             <h3 className="text-2xl font-bold mb-2">
@@ -63,15 +68,20 @@ const Fea = () => {
             <p className="text-gray-700 mb-4">
               This is my portfolio website. I have made this website using ReactJs and TailwindCSS.
             </p>
-            <a className="text-blue-500 underline flex items-center" href="https://man-navlakha.netlify.app/">
-              View Project
-              <RightArrow />
-            </a>
+           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-blue-500 underline flex items-center"
+      href="https://github.com/man-navlakha/system-app"
+    >
+      View Project
+      <RightArrow />
+    </a>
+  </div>
           </div>
 
 
-          <div className="bg-white w-[312px]   p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
+          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
               Windows Tray App
             </h2>
             <h3 className="text-2xl font-bold mb-2">
@@ -80,14 +90,19 @@ const Fea = () => {
             <p className="text-gray-700 mb-4">
               In this app we will show the shop & company details & massage from the Shop & comapny. This app is made in python.
             </p>
-            <a className="text-blue-500 underline flex items-center" href="https://github.com/man-navlakha/system-app">
-              View Project
-              <RightArrow />
-            </a>
+           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-blue-500 underline flex items-center"
+      href="https://github.com/man-navlakha/system-app"
+    >
+      View Project
+      <RightArrow />
+    </a>
+  </div>
           </div>
 
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
+          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
               Windows App
             </h2>
             <h3 className="text-2xl font-bold mb-2">
