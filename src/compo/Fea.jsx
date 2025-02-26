@@ -3,19 +3,19 @@ import RightArrow from './svg/right';
 
 function scrollLeft() {
     const container = document.getElementById('cardContainer');
-    container.scrollBy({ left: -300, behavior: 'smooth' });
+    container.scrollBy({ left: -420, behavior: 'smooth' });
 }
 
 function scrollRight() {
     const container = document.getElementById('cardContainer');
-    container.scrollBy({ left: 300, behavior: 'smooth' });
+    container.scrollBy({ left: 420, behavior: 'smooth' });
 }
 
 const Fea = () => {
   return (
     <div className="container cardContainer p-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-      <div className="mb-6 w-full md:w-max p-2 md:mb-0">
+      <div className="mb-6 w-full md:w-max p-6 pr-12 md:mb-0">
           <h1 className="text-3xl sm:text-2xl font-bold mb-2 w-full whitespace-normal break-words">
             Here are some projects as a BCA student
           </h1>
@@ -31,8 +31,8 @@ const Fea = () => {
             </button>
           </div>
         </div>
-        <div id="cardContainer" className="flex -m-4 overflow-x-auto max-w-full p-4 space-x-4">
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
+        <div id="cardContainer" className="flex overflow-x-scroll w-[1220px] p-4 space-x-4">
+          <div className="bg-white w-[400px] p-6 rounded-lg  shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
               Windows App
             </h2>
@@ -48,7 +48,7 @@ const Fea = () => {
             </a>
           </div>
 
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
+          <div className="bg-white w-[400px] p-6 rounded-lg shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
               Website
             </h2>
@@ -65,7 +65,7 @@ const Fea = () => {
           </div>
 
 
-          <div className="bg-white w-[255px] p-6 rounded-lg shadow-md flex-shrink-0">
+          <div className="bg-white w-[400px] p-6 rounded-lg shadow-md flex-shrink-0">
             <h2 className="text-sm text-gray-500 mb-1">
               Windows Tray App
             </h2>
@@ -79,6 +79,10 @@ const Fea = () => {
               View Project
               <RightArrow />
             </a>
+          </div>
+
+          <div className="bg-transprent w-[400px] p-6 flex-shrink-0">
+           
           </div>
           
 
