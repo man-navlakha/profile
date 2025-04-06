@@ -10,7 +10,7 @@ const About = () => {
     {/* <img src={ho} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt=""  /> */}
     {/* <img src={mho} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt=""  /> */}
     <div className='pt-4 pb-8'>
-    <h2 className="text-[60px]/[62px] p-6 font-normal hyphens-auto mb-2 -tracking-[0.03em]">
+    <h2 className="text-[30px]/[32px] md:text-[60px]/[62px] p-6 font-normal hyphens-auto mb-2 -tracking-[0.03em]">
     Skilled IT pro with a solid background in desktop and system support. Focuses on keeping things running.
           </h2>
     

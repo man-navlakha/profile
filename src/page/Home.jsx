@@ -13,7 +13,7 @@ const Home = () => {
       <Navbar />  
       <One />
       <About />
-      <Fea id="projects"/>
+      <Fea />
       <Project />
       {/* <Edu /> */}
       <Footer />

@@ -2,18 +2,18 @@ import React from 'react';
 import RightArrow from './svg/right';
 
 function scrollLeft() {
-  const container = document.getElementById('cardContainer');
-  container.scrollBy({ left: -330, behavior: 'smooth' });
+  const project = document.getElementById('projectBox');
+  project.scrollBy({ left: -330, behavior: 'smooth' });
 }
 
 function scrollRight() {
-  const container = document.getElementById('cardContainer');
-  container.scrollBy({ left: 330, behavior: 'smooth' });
+  const project = document.getElementById('projectBox');
+  project.scrollBy({ left: 330, behavior: 'smooth' });
 }
 
 const Fea = () => {
   return (
-    <div className="container cardContainer p-6">
+    <div className="project projectBox p-6">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="mb-6 w-[312px] p-2 px-12 md:mb-0">
           <h1 className="text-3xl sm:text-2xl font-bold mb-2 w-full whitespace-normal break-words">
@@ -35,7 +35,7 @@ const Fea = () => {
           </div>
 
         </div>
-        <div id="cardContainer" className="flex -m-4 overflow-x-auto block lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4">
+        <div id="projectBox" className="flex -m-4 overflow-x-auto block lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4">
 
          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
    <h2 className="text-sm text-gray-500 mb-1">

@@ -1,7 +1,7 @@
 {
   "name": "man",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "Man's day-56",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
