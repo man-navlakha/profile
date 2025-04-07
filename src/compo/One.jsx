@@ -1,5 +1,5 @@
 import React from 'react'
-import photo from '../assets/photo.jpg'; // Adjust the path as necessary
+import photo from '../assets/ChatGPT Image Apr 7, 2025, 09_08_28 PM.png'; // Adjust the path as necessary
 import '../App.css';
 import rpdf from '../assets/resume/RESUME.pdf';
 
