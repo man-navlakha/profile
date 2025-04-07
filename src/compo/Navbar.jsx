@@ -207,11 +207,39 @@ useEffect(() => {
       <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
 
         <div className="flex items-center">
-          <i
-            id="menu-icon"
-            className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars'} px-2 ease-in duration-150 text-gray-800 text-xl`}
-            onClick={toggleMenu}
-          ></i>
+        <i
+  id="menu-icon"
+  className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'text-gray-800 text-xl px-2 ease-in duration-150'}`}
+  onClick={toggleMenu}
+>
+  {!menuOpen && (
+    <svg
+      width="55px"
+      height="65px"
+      viewBox="-5.88 -5.88 32.76 32.76"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      fill="#111b21"
+      className='py-4 '
+    >
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <g id="Page-1" strokeWidth="0.00021000000000000004" fill="none" fillRule="evenodd">
+          <g id="Dribbble-Light-Preview" transform="translate(-179.000000, -205.000000)" fill="#111b21">
+            <g id="icons" transform="translate(56.000000, 160.000000)">
+              <path
+                d="M123,55 L144,55 L144,53 L123,53 L123,55 Z M123,47 L144,47 L144,45 L123,45 L123,47 Z M123,51 L144,51 L144,49 L123,49 L123,51 Z"
+                id="menu_list-[#111b21]"
+              ></path>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  )}
+</i>
         </div>
 
         <div className="flex items-center ease-in duration-150">
