@@ -7,6 +7,7 @@ import Windows from './svg/Windows';
 import Graphic from './svg/Graphic';
 import Python from './svg/python';
 import RightArrow from './svg/right';
+import Download from './svg/menu/Download';
 
 
 const Navbar = () => {
@@ -91,11 +92,9 @@ useEffect(() => {
 
 
 
-          <button className="  flex-none bg-green-500 hover:text-white whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
-            <span>Hire me!</span>
-            <i className="fas fa-briefcase ml-2"></i>
+          <button className="  flex-none bg-green-500  whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect-ww">
+          <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
           </button>
-
         </div>
 
 
@@ -209,10 +208,10 @@ useEffect(() => {
         <div className="flex items-center">
         <i
   id="menu-icon"
-  className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'text-gray-800 text-xl px-2 ease-in duration-150'}`}
+  className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}
   onClick={toggleMenu}
 >
-  {!menuOpen && (
+  {/* {!menuOpen && (
     <svg
       width="55px"
       height="65px"
@@ -238,7 +237,7 @@ useEffect(() => {
         </g>
       </g>
     </svg>
-  )}
+  )} */}
 </i>
         </div>
 
@@ -250,8 +249,9 @@ useEffect(() => {
         {/* </Link> */}
         <div
           className="flex items-center" >
-          <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect`} >
-            <i className='fas fa-briefcase'></i>
+          <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover:bg-white`} >
+            {/* <i className='fas fa-briefcase'></i> */}
+            <Download />
           </button>
         </div>
 
@@ -379,7 +379,7 @@ useEffect(() => {
           <div
             className="p-4 flex items-center justify-center" >
             <button className="bg-green-500 mb-12 text-gray-800 hover:text-[#1c1e21] ease-in duration-150 px-4 py-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect-ww">
-              <span> Hire me! <i className="fas fa-briefcase p-2"></i></span>
+              <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
             </button>
           </div>
         </ul>

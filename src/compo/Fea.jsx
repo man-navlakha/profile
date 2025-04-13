@@ -13,7 +13,7 @@ function scrollRight() {
 
 const Fea = () => {
   return (
-    <div className="project projectBox p-6">
+    <div className="project projectBox p-6 bg-[#E6FFDA]" >
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
         <div className="mb-6 w-[312px] p-2 px-12 md:mb-0">
           <h1 className="text-3xl sm:text-2xl font-bold mb-2 w-full whitespace-normal break-words">

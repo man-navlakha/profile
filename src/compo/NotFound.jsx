@@ -29,23 +29,14 @@ const NotFound = () => {
          </div>
         
       <div className="text-center md:text-left md:mr-8">
-            <img src={Wm} alt="wrong png" srcset="" />
+            <img src={Wm} alt="wrong png"  />
         </div>
 
 
     </div>
     </div>
     </>
-    // <div className="flex items-center p-4 justify-center min-h-screen bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-    //   <div className=" p-8 bg-white rounded-lg shadow-lg">
-    //     <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4 animate-pulse">404.</h1>
-    //     <p className="text-xl text-gray-700 mb-8">This page<br></br>
-    //     doesn't exist.</p>
-    //     <Link to="/" className="bg-white hover:text-white w-22  whitespace-nowrap ease-in duration-150  border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect">
-    //       Go Home
-    //     </Link>
-    //   </div>
-    // </div>
+
   );
 };
 

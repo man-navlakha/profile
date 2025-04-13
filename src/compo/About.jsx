@@ -6,13 +6,15 @@ import mhs from '../assets/mhs.png';
 
 const About = () => {
   return (
-    <div className="text-center font-semibold text-gray-800  mx-[17%]">
+    <div className="text-center font-semibold text-gray-800  mx-[10%]">
     {/* <img src={ho} className='object-scale-down w-auto hidden lg:block md:hidden sm:hidden' alt=""  /> */}
     {/* <img src={mho} className='object-scale-down w-auto lg:hidden sm:block  md:block' alt=""  /> */}
     <div className='pt-4 pb-8'>
     <h2 className="text-[30px]/[32px] md:text-[60px]/[62px] p-6 font-normal hyphens-auto mb-2 -tracking-[0.03em]">
-    Skilled IT pro with a solid background in desktop and system support. Focuses on keeping things running.
-          </h2>
+    {/* Skilled IT pro with a solid background in desktop and system support. Focuses on keeping things running. */}
+    {/* Skilled frontend developer with a solid background in building responsive, user-friendly interfaces. Focused on creating seamless digital experiences that just work. */}
+    Frontend developer with a strong focus on responsive, user-friendly interfaces and smooth digital experiences.
+    </h2>
     
 
 </div>

@@ -11,10 +11,10 @@ const One = () => {
             
             <div className="lg:w-1/2 text-center -mt-1/2 lg:text-left mb-8 lg:mb-0">
                 <h1 className="text-5xl font-bold text-gray-900 mb-4 px-12">
-                    Yourrr favvv IT Technician
+                Yourrr favvv Frontend Developer
                 </h1>
                 <p className="text-lg text-gray-700 px-12">
-                    that you can trust, and rely on. Whether you need help with computer repairs, network setup, or software installation, I can help.
+                That you can trust and rely on. Whether you need help building sleek interfaces, fixing layout bugs, or optimizing performance – I’ve got you covered.
                 </p>
 
                 <div className="flex justify-center lg:justify-start mt-6 px-12 text-sm lg:text-base w-screen">

@@ -39,6 +39,49 @@ const Projects = () => {
 
          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
    <h2 className="text-sm text-gray-500 mb-1">
+             Web Development
+            </h2>
+            <h3 className="text-2xl font-bold mb-2">
+             Pixel Class
+            </h3>
+            <p className="text-gray-700 mb-4">
+             A education note sharing Web-Application where student can Download and upload motes. <br />
+             Here i developed full fronted & Figma designs.
+            </p>
+           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-blue-500 underline flex items-center"
+      href="https://github.com/man-navlakha/pxc"
+    >
+      View Project
+      <RightArrow />
+    </a>
+  </div>
+          </div>
+
+         <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
+             Web Development
+            </h2>
+            <h3 className="text-2xl font-bold mb-2">
+             Solvinger
+            </h3>
+            <p className="text-gray-700 mb-4">
+            A AI model for code review, For write something & all these features. <br />
+             Here i developed full fronted parts with ReactJs.
+            </p>
+           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-blue-500 underline flex items-center"
+      href="https://github.com/man-navlakha/solvinger"
+    >
+      View Project
+      <RightArrow />
+    </a>
+  </div>
+          </div>
+         <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
+   <h2 className="text-sm text-gray-500 mb-1">
               Windows App
             </h2>
             <h3 className="text-2xl font-bold mb-2">
@@ -101,54 +144,6 @@ const Projects = () => {
   </div>
           </div>
 
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-   <h2 className="text-sm text-gray-500 mb-1">
-              Windows App
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              System App for Windows
-            </h3>
-            <p className="text-gray-700 mb-4">
-              In this app we will show the system information of the windows.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="https://github.com/man-navlakha/system-app">
-              View Project
-              <RightArrow />
-            </a>
-          </div>
-
-          <div className="bg-white w-[312px]   p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Website
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Portfolio
-            </h3>
-            <p className="text-gray-700 mb-4">
-              This is my portfolio website. I have made this website using ReactJs and TailwindCSS.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="https://man-navlakha.netlify.app/">
-              View Project
-              <RightArrow />
-            </a>
-          </div>
-
-
-          <div className="bg-white w-[312px]   p-6 rounded-lg shadow-md flex-shrink-0">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Windows Tray App
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Rent PC Security App for Windows
-            </h3>
-            <p className="text-gray-700 mb-4">
-              In this app we will show the shop & company details & massage from the Shop & comapny. This app is made in python.
-            </p>
-            <a className="text-blue-500 underline flex items-center" href="https://github.com/man-navlakha/system-app">
-              View Project
-              <RightArrow />
-            </a>
-          </div>
         </div>
       </div>
     </div>
