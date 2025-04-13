@@ -8,6 +8,7 @@ import Graphic from './svg/Graphic';
 import Python from './svg/python';
 import RightArrow from './svg/right';
 import Download from './svg/menu/Download';
+import rpdf from '../assets/resume/Man Navlakha Resume.pdf'
 
 
 const Navbar = () => {
@@ -84,17 +85,22 @@ useEffect(() => {
                 </Link>
               </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Skills</li>
-              <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Download Resume </li>
+              <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
+              <Link to={rpdf}>
+                Download Resume
+                </Link>
+                </li>
               <li>
               </li>
             </ul>
           </div>
 
 
-
+<a href={rpdf}>
           <button className="  flex-none bg-green-500  whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect-ww">
           <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
           </button>
+          </a>
         </div>
 
 
@@ -249,10 +255,11 @@ useEffect(() => {
         {/* </Link> */}
         <div
           className="flex items-center" >
+            <a href={rpdf}>
           <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover:bg-white`} >
             {/* <i className='fas fa-briefcase'></i> */}
             <Download />
-          </button>
+          </button></a>
         </div>
 
       </div>
@@ -378,9 +385,11 @@ useEffect(() => {
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
             className="p-4 flex items-center justify-center" >
+              <a href={rpdf}>
             <button className="bg-green-500 mb-12 text-gray-800 hover:text-[#1c1e21] ease-in duration-150 px-4 py-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect-ww">
               <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
             </button>
+            </a>
           </div>
         </ul>
       </div>
