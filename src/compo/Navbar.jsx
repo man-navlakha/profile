@@ -23,27 +23,27 @@ const Navbar = () => {
   const toggleFeatures = () => {
     setSubmenuOpen(!submenuOpen);
   };
-  
-useEffect(() => {
-  const handleScroll = () => {
+
+  useEffect(() => {
+    const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-  };
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-useEffect(() => {
-  if (menuOpen) {
+  useEffect(() => {
+    if (menuOpen) {
       document.body.classList.add('overflow-hidden');
-  } else {
+    } else {
       document.body.classList.remove('overflow-hidden');
-  }
+    }
 
-  return () => {
+    return () => {
       document.body.classList.remove('overflow-hidden');
-  };
-}, [menuOpen]);
+    };
+  }, [menuOpen]);
 
   return (
     <>
@@ -54,7 +54,7 @@ useEffect(() => {
         className={`px-8 transition-all duration-300 ease-in-out 
     ${submenuOpen ? 'bg-white h-screen border-none' : 'bg-[rgba(252,245,235,0.8)]'} 
     ${scrolled ? "border-b-2 border-[#cec9c1]" : ""}
-    scroll-mt-16 hidden lg:block sticky top-0 backdrop-blur-sm p-4 z-50`}
+    scroll-mt-16 hidden lg:block sticky  backdrop-blur-sm p-4 z-50`}
       >
 
         <div className="flex items-center">
@@ -86,20 +86,20 @@ useEffect(() => {
               </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Skills</li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
-              <Link to={rpdf}>
-                Download Resume
+                <Link to={rpdf}>
+                  Download Resume
                 </Link>
-                </li>
+              </li>
               <li>
               </li>
             </ul>
           </div>
 
 
-<a href={rpdf}>
-          <button className="  flex-none bg-green-500  whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect-ww">
-          <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
-          </button>
+          <a href={rpdf}>
+            <button className="  flex-none bg-green-500  whitespace-nowrap  ease-in duration-150 px-4 py-2 m-2 border rounded-full border-[#1c1e21]  rounded-full flex items-center relative overflow-hidden hover-effect-ww">
+              <span className='flex items-center'> Dowmload &emsp;<Download className="" /></span>
+            </button>
           </a>
         </div>
 
@@ -109,7 +109,7 @@ useEffect(() => {
 
           <li className="">
             <div className="hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
-               <div className="text-green-500 text-3xl mb-2 hover:">
+              <div className="text-green-500 text-3xl mb-2 hover:">
                 <It />
               </div>
               <h2 className="text-xl font-semibold mb-2">IT Technician</h2>
@@ -207,63 +207,56 @@ useEffect(() => {
 
 
 
-
       {/* For Mobile */}
       <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
-
-        <div className="flex items-center">
-        <i
-  id="menu-icon"
-  className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}
-  onClick={toggleMenu}
->
-  {/* {!menuOpen && (
-    <svg
-      width="55px"
-      height="65px"
-      viewBox="-5.88 -5.88 32.76 32.76"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      fill="#111b21"
-      className='py-4 '
-    >
-      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-      <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-      <g id="SVGRepo_iconCarrier">
-        <g id="Page-1" strokeWidth="0.00021000000000000004" fill="none" fillRule="evenodd">
-          <g id="Dribbble-Light-Preview" transform="translate(-179.000000, -205.000000)" fill="#111b21">
-            <g id="icons" transform="translate(56.000000, 160.000000)">
-              <path
-                d="M123,55 L144,55 L144,53 L123,53 L123,55 Z M123,47 L144,47 L144,45 L123,45 L123,47 Z M123,51 L144,51 L144,49 L123,49 L123,51 Z"
-                id="menu_list-[#111b21]"
-              ></path>
-            </g>
-          </g>
-        </g>
-      </g>
-    </svg>
-  )} */}
-</i>
+<div className="flex items-center">
+          <i id="menu-icon"
+            className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}
+            onClick={toggleMenu}  > </i>
         </div>
 
         <div className="flex items-center ease-in duration-150">
-          {/* <Link to="/"> */}
+          <Link to="/">
           <div className='ease-in duration-150 text-[#25d366] font-bold text-xl '>  Man Navlakha</div>
+        </Link>
         </div>
 
-        {/* </Link> */}
         <div
           className="flex items-center" >
-            <a href={rpdf}>
-          <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover:bg-white`} >
-            {/* <i className='fas fa-briefcase'></i> */}
-            <Download />
-          </button></a>
+          <a href={rpdf}>
+            <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover:bg-white`} >
+              {/* <i className='fas fa-briefcase'></i> */}
+              <Download />
+            </button></a>
         </div>
 
       </div>
 
+
+
+      {/* For Mobile bottom navbar */}
+      {/* <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] fixed bottom-5'}  ease-in duration-150 rounded-full mx-10 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
+<div className="flex items-center">
+          <i id="menu-icon"
+            className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}
+            onClick={toggleMenu}  > </i>
+        </div>
+
+        <div className="flex items-center ease-in duration-150">
+          <Link to="/">
+          <div className='ease-in duration-150 text-[#25d366] font-bold text-xl mx-5 '>  Man Navlakha</div>
+        </Link>
+        </div>
+
+        <div
+          className="flex items-center" >
+          <a href={rpdf}>
+            <button className={`${menuOpen ? 'hidden' : 'bg-green-500'}  hover:text-white ease-in duration-150 p-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover:bg-white`} >
+              <Download />
+            </button></a>
+        </div>
+
+      </div> */}
 
 
 
@@ -291,91 +284,91 @@ useEffect(() => {
 
             </div>
 
-          <div className='tm_man_open'>
+            <div className='tm_man_open'>
 
-         
-            <ul className={` ${submenuOpen ? 'scroll-smooth ' : 'hidden'} scroll-smooth tm_man_open mt-2`} id="features-submenu">
 
-              <li className='mt-4 '>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start ">
-                  <div className="w-[32]">
-                    <It />
-                  </div>
+              <ul className={` ${submenuOpen ? 'scroll-smooth ' : 'hidden'} scroll-smooth tm_man_open mt-2`} id="features-submenu">
 
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                <li className='mt-4 '>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start ">
+                    <div className="w-[32]">
+                      <It />
+                    </div>
+
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> IT help desk support</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-              <li className='mt-4'>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
-                  <div className="w-[32]">
-                    <Web />
-                  </div>
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                </li>
+                <li className='mt-4'>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start">
+                    <div className="w-[32]">
+                      <Web />
+                    </div>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Web Development</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-              <li className='mt-4'>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
-                  <div className="w-[32]">
-                    <Android />
-                  </div>
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                </li>
+                <li className='mt-4'>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start">
+                    <div className="w-[32]">
+                      <Android />
+                    </div>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Android Development</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-              <li className='mt-4'>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
-                  <div className="w-[32]">
-                    <Windows />
-                  </div>
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                </li>
+                <li className='mt-4'>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start">
+                    <div className="w-[32]">
+                      <Windows />
+                    </div>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Windows Application</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-              <li className='mt-4'>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
-                  <div className="w-[32]">
-                    <Python />
-                  </div>
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                </li>
+                <li className='mt-4'>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start">
+                    <div className="w-[32]">
+                      <Python />
+                    </div>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
   under-ani"> Python  Development</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-              <li className='mt-4'>
-                <div className="fill-green-500  text-[#1c1e21] flex justify-start">
-                  <div className="w-[32]">
-                    <Graphic />
-                  </div>
-                  <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
+                </li>
+                <li className='mt-4'>
+                  <div className="fill-green-500  text-[#1c1e21] flex justify-start">
+                    <div className="w-[32]">
+                      <Graphic />
+                    </div>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
  under-ani"> Graphic Design</h2>
-                  <div className="">
-                    <RightArrow />
+                    <div className="">
+                      <RightArrow />
+                    </div>
                   </div>
-                </div>
 
-              </li>
-            </ul>
+                </li>
+              </ul>
             </div>
           </li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">  <Link to={"/projects"}>
@@ -385,10 +378,10 @@ useEffect(() => {
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
             className="p-4 flex items-center justify-center" >
-              <a href={rpdf}>
-            <button className="bg-green-500 mb-12 text-gray-800 hover:text-[#1c1e21] ease-in duration-150 px-4 py-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect-ww">
-              <span className='flex items-center'> Dowmload &emsp;<Download className=""/></span> 
-            </button>
+            <a href={rpdf}>
+              <button className="bg-green-500 mb-12 text-gray-800 hover:text-[#1c1e21] ease-in duration-150 px-4 py-2 border rounded-full border-[#1c1e21] text-center flex items-center relative overflow-hidden hover-effect-ww">
+                <span className='flex items-center'> Dowmload &emsp;<Download className="" /></span>
+              </button>
             </a>
           </div>
         </ul>
