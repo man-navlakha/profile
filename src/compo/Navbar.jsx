@@ -54,7 +54,7 @@ const Navbar = () => {
         className={`px-8 transition-all duration-300 ease-in-out 
     ${submenuOpen ? 'bg-white h-screen border-none' : 'bg-[rgba(252,245,235,0.8)]'} 
     ${scrolled ? "border-b-2 border-[#cec9c1]" : ""}
-    scroll-mt-16 hidden lg:block sticky  backdrop-blur-sm p-4 z-50`}
+    scroll-mt-16 hidden lg:block  sticky top-0  backdrop-blur-sm p-4 z-50`}
       >
 
         <div className="flex items-center">
