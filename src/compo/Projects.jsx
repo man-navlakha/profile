@@ -48,7 +48,13 @@ const Projects = () => {
              A education note sharing Web-Application where student can Download and upload motes. <br />
              Here i developed full fronted & Figma designs.
             </p>
-           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+           <div className="mt-auto flex justify-between"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
+      href="https://pixelclass.netlify.app/"
+    >
+      Visit Site
+    </a>
     <a
       className="text-blue-500 underline flex items-center"
       href="https://github.com/man-navlakha/pxc"
@@ -70,7 +76,13 @@ const Projects = () => {
             A AI model for code review, For write something & all these features. <br />
              Here i developed full fronted parts with ReactJs.
             </p>
-           <div className="mt-auto"> {/* Pushes the link to the bottom */}
+            <div className="mt-auto flex justify-between"> {/* Pushes the link to the bottom */}
+    <a
+      className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
+      href="https://mysolvingerai.vercel.app/"
+    >
+      Visit Site
+    </a>
     <a
       className="text-blue-500 underline flex items-center"
       href="https://github.com/man-navlakha/solvinger"
@@ -114,7 +126,7 @@ const Projects = () => {
            <div className="mt-auto"> {/* Pushes the link to the bottom */}
     <a
       className="text-blue-500 underline flex items-center"
-      href="https://github.com/man-navlakha/system-app"
+      href="https://github.com/man-navlakha/profile"
     >
       View Project
       <RightArrow />
@@ -136,7 +148,7 @@ const Projects = () => {
            <div className="mt-auto"> {/* Pushes the link to the bottom */}
     <a
       className="text-blue-500 underline flex items-center"
-      href="https://github.com/man-navlakha/system-app"
+      href="https://github.com/man-navlakha/psr"
     >
       View Project
       <RightArrow />
