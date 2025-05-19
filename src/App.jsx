@@ -3,21 +3,19 @@ import './App.css';
 import Cont from './page/Cont';
 import Home from './page/Home';
 import NotFound from './compo/NotFound';
-import Navbar from './compo/Navbar';
-
-
 function App() {
-
-
-  return ( 
+  return (
     <div >
-      
-        <Routes >
-          <Route path='*' element={<NotFound />} />
-          <Route path='/' element={<Home />} />
-          <Route path='/contect' element={<Cont />} />
-        </Routes>
-      </div>
+
+      <Routes >
+        <Route path='*' element={<NotFound />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/contect' element={<Cont />} />
+      </Routes>
+
+
+
+    </div>
   );
 }
 
