@@ -6,6 +6,7 @@ import Fea from '../compo/Fea'
 import Project from '../compo/Projects'
 import Edu from '../compo/Edu'
 import Footer from '../compo/Footer'
+import Skills from '../compo/Skills'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <One />
       <About />
       <Fea />
+      <Skills/>
       <Edu />
       <Project />
       <Footer />

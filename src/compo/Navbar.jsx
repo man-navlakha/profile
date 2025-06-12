@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import It from './svg/It';
 import Web from './svg/Web';
 import Android from './svg/Android';
@@ -15,10 +15,16 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submenuOpen, setSubmenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const nav = (gate) =>{
+    setMenuOpen(false)
+    setSubmenuOpen(false)
+    navigate(`#${gate}`)
+  }
 
   const toggleFeatures = () => {
     setSubmenuOpen(!submenuOpen);
@@ -84,11 +90,13 @@ const Navbar = () => {
                   Projects
                 </Link>
               </li>
-              <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">Skills</li>
+              <li onClick={() => nav("Skills")} className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
+             Skills
+              </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
-                <Link to={rpdf}>
+                 <a href={rpdf}>
                   Download Resume
-                </Link>
+                </a>
               </li>
               <li>
               </li>
@@ -371,10 +379,8 @@ const Navbar = () => {
               </ul>
             </div>
           </li>
-          <li className="p-4 px-6 hover:bg-[#21262d] ">  <Link to={"/projects"}>
-            Projects
-          </Link></li>
-          <li className="p-4 px-6 hover:bg-[#21262d] ">Skills</li>
+          <li onClick={() => nav("projects")}  className="p-4 px-6 hover:bg-[#21262d] "> Projects </li>
+          <li onClick={() => nav("Skills")}  className="p-4 px-6 hover:bg-[#21262d] ">  Skills </li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
             className="p-4 flex items-center justify-center" >
