@@ -112,22 +112,23 @@ const Projects = () => {
               Career System
             </h3>
             <p className="text-gray-700 mb-4">
-              i developed a career system at "HarSar Innovations" using react js 3 phase login system 
+              i developed a career system at "HarSar Innovations" using react js the same design they provided me on figma, & added Deployed on vercel.
             </p>
-            <div className="mt-auto flex justify-between"> {/* Pushes the link to the bottom */}
+            <div className="mt-auto flex justify-between">
               <a
                 className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
-                href="https://mysolvingerai.vercel.app/"
+                href="https://career-intern.vercel.app/"
               >
                 Visit Site
               </a>
+             
               <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/solvinger"
+                className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
+                href="https://server-eight-lac.vercel.app/"
               >
-                View Project
-                <RightArrow />
+                Visit API
               </a>
+             
             </div>
           </div>
           <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
