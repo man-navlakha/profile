@@ -62,17 +62,17 @@
 
 
 
-.cursor {
-    background-color: #fff;
-    height: 10px;
-    width: 10px;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
 
-body{
-    cursor: url('./assets/Cursor-PNG-Pic.png'), auto;
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.bg-b-l{
+    background: linear-gradient(to left,transparent ,#111);
+}
+.bg-b-r{
+    background: linear-gradient(to right,transparent ,black);
 }

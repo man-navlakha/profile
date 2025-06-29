@@ -7,18 +7,24 @@ import Project from '../compo/Projects'
 import Edu from '../compo/Edu'
 import Footer from '../compo/Footer'
 import Skills from '../compo/Skills'
+import Scroll from '../compo/Scroll'
 
 const Home = () => {
   return (
     <div>
-      <Navbar />  
+      <Navbar />
       <One />
+      <Scroll />
       <About />
       <Fea />
-      <Skills/>
+      <Skills />
       <Edu />
+      <Scroll />
+
       <Project />
       <Footer />
+
+
     </div>
   )
 }

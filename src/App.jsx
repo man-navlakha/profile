@@ -5,7 +5,7 @@ import Home from './page/Home';
 import NotFound from './compo/NotFound';
 function App() {
   return (
-    <div >
+    <div>
 
       <Routes >
         <Route path='*' element={<NotFound />} />
