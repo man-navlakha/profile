@@ -34,17 +34,17 @@ const Projects = () => {
             Gain real-world experience by working on practical projects throughout your BCA program
           </p>
 
+
           <div>
-            <div className="flex space-x-2">
-              <button className="w-10 h-10 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollLeft}>
+            <div className="flex space-x-2 text-xl">
+              <button className="px-4 py-3 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollLeft}>
                 <i className="fas fa-chevron-left"></i>
               </button>
-              <button className="w-10 h-10 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollRight}>
+              <button className="px-4 py-3 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollRight}>
                 <i className="fas fa-chevron-right"></i>
               </button>
             </div>
           </div>
-
         </div>
         <div id="cardCont" className="flex -m-4 overflow-x-auto block lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4">
 

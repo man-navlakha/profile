@@ -216,7 +216,7 @@ const Navbar = () => {
 
 
       {/* For Mobile */}
-      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
+      <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-40 backdrop-saturate-100 backdrop-contrast-100 bg-blend-overlay sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
 <div className="flex items-center">
           <i id="menu-icon"
             className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}

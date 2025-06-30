@@ -8,20 +8,22 @@ import Edu from '../compo/Edu'
 import Footer from '../compo/Footer'
 import Skills from '../compo/Skills'
 import Scroll from '../compo/Scroll'
+import Degi from '../compo/Degi'
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <One />
-      <Scroll />
+      <Degi/>
       <About />
       <Fea />
+      <Scroll />
       <Skills />
       <Edu />
-      <Scroll />
-
       <Project />
+
+      <Scroll />
       <Footer />
 
 
