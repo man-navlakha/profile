@@ -77,7 +77,7 @@ const Chatbot = () => {
         setLoading(true);
     
         try {
-          const response = await fetch('http://localhost:8000/api/chat/', {
+          const response = await fetch('https://backend-3j4r.onrender.com/api/chat/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ history: newMessages }),
@@ -142,7 +142,7 @@ const Chatbot = () => {
         e.preventDefault();
         setLoading(true);
         try {
-          await axios.post('http://localhost:8000/api/hire/', hireDetails);
+          await axios.post('https://backend-3j4r.onrender.com/api/hire/', hireDetails);
           setShowHireForm(false);
           const confirmationMsg = {
             sender: 'bot',
