@@ -9,6 +9,7 @@ import Footer from '../compo/Footer'
 import Skills from '../compo/Skills'
 import Scroll from '../compo/Scroll'
 import Degi from '../compo/Degi'
+import ChatbotPopup from '../compo/chatbot'
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
 
       <Scroll />
       <Footer />
+      <ChatbotPopup />
 
 
     </div>

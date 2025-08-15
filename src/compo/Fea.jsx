@@ -67,13 +67,13 @@ const Fea = () => {
               </ul>
             </div>
             <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
+              {/* <a
                 className="text-blue-500 underline flex items-center"
                 href="https://github.com/man-navlakha/system-app"
               >
                 View Project
                 <RightArrow />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -91,13 +91,13 @@ const Fea = () => {
             Experienced IT Support professional with a proven track record of maintaining 99.9% system uptime and resolving 60+ hardware/software issues to enhance reliability. Skilled in Windows/Linux OS configuration, Office 365 support, and managing service desk operations with high customer satisfaction. Strong documentation abilities and hands-on expertise in IT hardware installation and maintenance.
             </p>
             <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
+              {/* <a
                 className="text-blue-500 underline flex items-center"
                 href="https://github.com/man-navlakha/system-app"
               >
                 View Project
                 <RightArrow />
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -115,13 +115,13 @@ const Fea = () => {
             As a Web Developer, I created a career page using React.js and Express.js with PostgreSQL. The frontend was built using React.js and Tailwind CSS, featuring responsive design, API integration, and interactive popups—fully matching the design provided by the Figma team.On the backend, I used Node.js with Express.js to build APIs and set up routing. This project was also added to a private repository where I worked with TypeScript and additional enhancements.
             </div>
             <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
+              {/* <a
                 className="text-blue-500 underline flex items-center"
                 href="https://github.com/man-navlakha/system-app"
               >
                 View Project
                 <RightArrow />
-              </a>
+              </a> */}
             </div>
           </div>
 

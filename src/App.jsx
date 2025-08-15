@@ -3,6 +3,7 @@ import './App.css';
 import Cont from './page/Cont';
 import Home from './page/Home';
 import NotFound from './compo/NotFound';
+import Chatbot from './compo/chatbot';
 function App() {
   return (
     <div>
@@ -11,8 +12,8 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path='/' element={<Home />} />
         <Route path='/contect' element={<Cont />} />
+        <Route path='/chat' element={<Chatbot />} />
       </Routes>
-
 
 
     </div>

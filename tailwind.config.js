@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,5 +8,8 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  // Add the plugins section
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
