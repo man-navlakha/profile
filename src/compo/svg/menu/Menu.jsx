@@ -16,8 +16,8 @@ const Menu = (props) => {
         x2="23.543"
         y2="12.75"
         stroke="currentColor"
-        strokeWidth="1.5" // Changed 'stroke-width' to 'strokeWidth'
-        strokeLinecap="round" // Changed 'stroke-linecap' to 'strokeLinecap'
+        strokeWidth="1.5" // Changed 'strokeWidth' to 'strokeWidth'
+        strokeLinecap="round" // Changed 'strokeLinecap' to 'strokeLinecap'
       />
       <line
         x1="1.04297"

@@ -114,31 +114,31 @@ const Chatbot = () => {
   };
 
   const speakText = async (text) => {
-  if (!text.trim()) return;
-  setVoiceStatus('AI is speaking...');
-  try {
-    const response = await axios.post(`${BACKEND_URL}/api/synthesize-speech/`, { text });
-    const { audioContent, mimeType } = response.data;
+    if (!text.trim()) return;
+    setVoiceStatus('AI is speaking...');
+    try {
+      const response = await axios.post(`${BACKEND_URL}/api/synthesize-speech/`, { text });
+      const { audioContent, mimeType } = response.data;
 
-    if (audioContent && mimeType && mimeType.startsWith("audio/")) {
-      // Convert base64 -> Blob directly (no PCM conversion needed)
-      const byteArray = Uint8Array.from(atob(audioContent), c => c.charCodeAt(0));
-      const audioBlob = new Blob([byteArray], { type: mimeType });
-      const audioUrl = URL.createObjectURL(audioBlob);
+      if (audioContent && mimeType && mimeType.startsWith("audio/")) {
+        // Convert base64 -> Blob directly (no PCM conversion needed)
+        const byteArray = Uint8Array.from(atob(audioContent), c => c.charCodeAt(0));
+        const audioBlob = new Blob([byteArray], { type: mimeType });
+        const audioUrl = URL.createObjectURL(audioBlob);
 
-      const audio = new Audio(audioUrl);
-      audio.play();
+        const audio = new Audio(audioUrl);
+        audio.play();
 
-      audio.onended = () => {
-        setVoiceStatus('Click the mic to start');
-        if (recognitionRef.current) recognitionRef.current.start();
-      };
+        audio.onended = () => {
+          setVoiceStatus('Click the mic to start');
+          if (recognitionRef.current) recognitionRef.current.start();
+        };
+      }
+    } catch (error) {
+      console.error("Error synthesizing speech:", error);
+      setVoiceStatus('Error, please try again.');
     }
-  } catch (error) {
-    console.error("Error synthesizing speech:", error);
-    setVoiceStatus('Error, please try again.');
-  }
-};
+  };
 
 
   const toggleListen = () => {
@@ -164,24 +164,24 @@ const Chatbot = () => {
         setVoiceStatus('Processing...');
       };
       recognition.onresult = async (event) => {
-  try {
-    // Get user speech transcript
-    const transcript = event.results[0][0].transcript;
-    console.log("User said:", transcript);
+        try {
+          // Get user speech transcript
+          const transcript = event.results[0][0].transcript;
+          console.log("User said:", transcript);
 
-    // Send to backend
-    const aiResponse = await sendMessage(transcript);
+          // Send to backend
+          const aiResponse = await sendMessage(transcript);
 
-    // Display AI response in chat (if you have state)
-    setMessages((prev) => [...prev, { role: "user", text: transcript }]);
-    setMessages((prev) => [...prev, { role: "assistant", text: aiResponse }]);
+          // Display AI response in chat (if you have state)
+          setMessages((prev) => [...prev, { role: "user", text: transcript }]);
+          setMessages((prev) => [...prev, { role: "assistant", text: aiResponse }]);
 
-    // Speak AI response
-    await synthesizeSpeech(aiResponse);
-  } catch (err) {
-    console.error("Speech recognition -> chat flow failed:", err);
-  }
-};
+          // Speak AI response
+          await synthesizeSpeech(aiResponse);
+        } catch (err) {
+          console.error("Speech recognition -> chat flow failed:", err);
+        }
+      };
 
       recognition.onerror = (event) => {
         console.error('Speech recognition error', event.error);
@@ -331,7 +331,10 @@ const ChatbotPopup = () => {
     <>
       <AnimatePresence>
         {isOpen && (
-          <motion.div initial={{ opacity: 0, y: 50, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 50, scale: 0.9 }} transition={{ duration: 0.3, ease: "easeOut" }} className="fixed bottom-24 right-5 z-50" style={{ width: 'clamp(300px, 90vw, 450px)', height: 'clamp(400px, 80vh, 500px)' }}>
+          <motion.div initial={{ opacity: 0, y: 50, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={{ opacity: 0, y: 50, scale: 0.9 }} transition={{ duration: 0.3, ease: "easeOut" }} className="fixed bottom-24 right-5 z-50" style={{
+            width: 'clamp(300px, 90vw, 450px)',
+            height: 'clamp(400px, 80vh, 500px)',
+          }} >
             <Chatbot />
           </motion.div>
         )}
