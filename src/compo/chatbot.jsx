@@ -113,29 +113,32 @@ const Chatbot = () => {
   };
 
   const speakText = async (text) => {
-    if (!text.trim()) return;
-    setVoiceStatus('AI is speaking...');
-    try {
-      const response = await axios.post(`${BACKEND_URL}/api/synthesize-speech/`, { text });
-      const { audioContent, mimeType } = response.data;
-      if (audioContent && mimeType && mimeType.startsWith("audio/")) {
-        const sampleRate = parseInt(mimeType.match(/rate=(\d+)/)[1], 10);
-        const pcmData = base64ToArrayBuffer(audioContent);
-        const pcm16 = new Int16Array(pcmData);
-        const wavBlob = pcmToWav(pcm16, sampleRate);
-        const audioUrl = URL.createObjectURL(wavBlob);
-        const audio = new Audio(audioUrl);
-        audio.play();
-        audio.onended = () => {
-          setVoiceStatus('Click the mic to start');
-          if (recognitionRef.current) recognitionRef.current.start();
-        };
-      }
-    } catch (error) {
-      console.error("Error synthesizing speech:", error);
-      setVoiceStatus('Error, please try again.');
+  if (!text.trim()) return;
+  setVoiceStatus('AI is speaking...');
+  try {
+    const response = await axios.post(`${BACKEND_URL}/api/synthesize-speech/`, { text });
+    const { audioContent, mimeType } = response.data;
+
+    if (audioContent && mimeType && mimeType.startsWith("audio/")) {
+      // Convert base64 -> Blob directly (no PCM conversion needed)
+      const byteArray = Uint8Array.from(atob(audioContent), c => c.charCodeAt(0));
+      const audioBlob = new Blob([byteArray], { type: mimeType });
+      const audioUrl = URL.createObjectURL(audioBlob);
+
+      const audio = new Audio(audioUrl);
+      audio.play();
+
+      audio.onended = () => {
+        setVoiceStatus('Click the mic to start');
+        if (recognitionRef.current) recognitionRef.current.start();
+      };
     }
-  };
+  } catch (error) {
+    console.error("Error synthesizing speech:", error);
+    setVoiceStatus('Error, please try again.');
+  }
+};
+
 
   const toggleListen = () => {
     if (isListening) {
