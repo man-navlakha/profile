@@ -60,7 +60,7 @@ const Chatbot = () => {
   // const BACKEND_URL = 'http://172.20.10.4:8000';
   const BACKEND_URL = 'https://backend-3j4r.onrender.com';
 
-  const initialMessage = { sender: 'bot', text: "👋 Hi! I’m your portfolio assistant. Ask me anything about Mann's experience.", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), suggestions: ["What are your skills?", "Tell me about your projects", "I'd like to hire you"] };
+  const initialMessage = { sender: 'bot', text: "👋 Hi! I’m Man's assistant. Ask me anything about Man's experience.", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), suggestions: ["What are your skills?", "Tell me about your projects", "Walk me through your resume", "What are your key skills and areas of expertise?"] };
   const [messages, setMessages] = useState([initialMessage]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -218,7 +218,7 @@ const Chatbot = () => {
       <div className="bg-[#075E54] text-white p-3 flex items-center justify-between rounded-t-lg">
         <div className="flex items-center">
           <div className="w-10 h-10 rounded-full bg-[#128C7E] flex items-center justify-center font-bold text-xl mr-3">M</div>
-          <div><div className="font-bold">Mann's Assistant</div><div className="text-xs opacity-80">online</div></div>
+          <div><div className="font-bold">Man's Assistant</div><div className="text-xs opacity-80">online</div></div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={() => setShowVoiceCall(true)} title="Start Voice Call"><CallIcon /></button>
