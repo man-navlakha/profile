@@ -57,6 +57,7 @@ const pcmToWav = (pcmData, sampleRate) => {
 const Chatbot = () => {
   // For production, use your live URL. For local development, use 'http://localhost:8000'.
   // It's best practice to manage this with environment variables in your build setup.
+  // const BACKEND_URL = 'http://172.20.10.4:8000';
   const BACKEND_URL = 'https://backend-3j4r.onrender.com';
 
   const initialMessage = { sender: 'bot', text: "👋 Hi! I’m your portfolio assistant. Ask me anything about Mann's experience.", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), suggestions: ["What are your skills?", "Tell me about your projects", "I'd like to hire you"] };
@@ -162,10 +163,26 @@ const Chatbot = () => {
         setIsListening(false);
         setVoiceStatus('Processing...');
       };
-      recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        sendMessage(transcript, true);
-      };
+      recognition.onresult = async (event) => {
+  try {
+    // Get user speech transcript
+    const transcript = event.results[0][0].transcript;
+    console.log("User said:", transcript);
+
+    // Send to backend
+    const aiResponse = await sendMessage(transcript);
+
+    // Display AI response in chat (if you have state)
+    setMessages((prev) => [...prev, { role: "user", text: transcript }]);
+    setMessages((prev) => [...prev, { role: "assistant", text: aiResponse }]);
+
+    // Speak AI response
+    await synthesizeSpeech(aiResponse);
+  } catch (err) {
+    console.error("Speech recognition -> chat flow failed:", err);
+  }
+};
+
       recognition.onerror = (event) => {
         console.error('Speech recognition error', event.error);
         setVoiceStatus('Error listening. Please try again.');
