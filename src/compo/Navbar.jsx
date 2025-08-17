@@ -20,7 +20,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const nav = (gate) =>{
+  const nav = (gate) => {
     setMenuOpen(false)
     setSubmenuOpen(false)
     navigate(`#${gate}`)
@@ -91,10 +91,10 @@ const Navbar = () => {
                 </Link>
               </li>
               <li onClick={() => nav("Skills")} className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
-             Skills
+                Skills
               </li>
               <li className="hover:underline-offset-4 decoration-green-500 hover:underline hover:ease-in hover:duration-150 ">
-                 <a href={rpdf}>
+                <a href={rpdf}>
                   Download Resume
                 </a>
               </li>
@@ -115,7 +115,7 @@ const Navbar = () => {
         <ul className={` ${submenuOpen ? '' : 'hidden'} scroll-smooth flex gap-[25px] flex-wrap justify-center pt-[16px] pb-[22px]`} id="features-submenu">
 
 
-          <li className="">
+          <li className=""><a href="/it">
             <div className="hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <It />
@@ -127,9 +127,10 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
 
-          <li className="">
+          <li className=""><a href="/web">
             <div className="hover:bg-green-500 h-max   fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Web />
@@ -141,9 +142,10 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
 
-          <li className="">
+          <li className=""><a href="/android">
             <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Android />
@@ -155,8 +157,9 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
-          <li className="">
+          <li className=""><a href="/windwos">
             <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Windows />
@@ -168,9 +171,10 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
 
-          <li className="">
+          <li className=""><a href="/python">
             <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Python />
@@ -182,9 +186,10 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
 
-          <li className="">
+          <li className=""><a href="/design">
             <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Graphic />
@@ -196,6 +201,7 @@ const Navbar = () => {
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
+          </a>
           </li>
         </ul>
       </nav>
@@ -217,7 +223,7 @@ const Navbar = () => {
 
       {/* For Mobile */}
       <div className={`${menuOpen ? 'bg-[#1c1e21] border-[#9e9a93] fixed w-full' : 'bg-[rgba(252,245,235,0.8)] bg-clip-padding backdrop-filter  backdrop-blur bg-opacity-40 backdrop-saturate-100 backdrop-contrast-100 bg-blend-overlay sticky top-0'}  ease-in duration-150 lg:hidden backdrop-blur-sm p-4 z-50  ${scrolled ? "border-b-2 border-[#cec9c1]" : ""} flex items-center justify-between p-2`}>
-<div className="flex items-center">
+        <div className="flex items-center">
           <i id="menu-icon"
             className={`fas ${menuOpen ? 'fa-times text-white px-[10px]' : 'fa-bars text-gray-800 text-xl px-2 ease-in duration-150'}`}
             onClick={toggleMenu}  > </i>
@@ -225,8 +231,8 @@ const Navbar = () => {
 
         <div className="flex items-center ease-in duration-150">
           <Link to="/">
-          <div className='ease-in duration-150 text-[#25d366] font-bold text-xl '>  Man Navlakha</div>
-        </Link>
+            <div className='ease-in duration-150 text-[#25d366] font-bold text-xl '>  Man Navlakha</div>
+          </Link>
         </div>
 
         <div
@@ -298,89 +304,95 @@ const Navbar = () => {
               <ul className={` ${submenuOpen ? 'scroll-smooth ' : 'hidden'} scroll-smooth tm_man_open mt-2`} id="features-submenu">
 
                 <li className='mt-4 '>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start ">
                     <div className="w-[32]">
                       <It />
                     </div>
 
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
-  under-ani"> IT help desk support</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4 under-ani"> IT help desk support</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
                 <li className='mt-4'>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                     <div className="w-[32]">
                       <Web />
                     </div>
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
-  under-ani"> Web Development</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4 under-ani"> Web Development</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
                 <li className='mt-4'>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                     <div className="w-[32]">
                       <Android />
                     </div>
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
-  under-ani"> Android Development</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4 under-ani"> Android Development</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
                 <li className='mt-4'>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                     <div className="w-[32]">
                       <Windows />
                     </div>
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
-  under-ani"> Windows Application</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4 under-ani"> Windows Application</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
                 <li className='mt-4'>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                     <div className="w-[32]">
                       <Python />
                     </div>
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
-  under-ani"> Python  Development</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4 under-ani"> Python  Development</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
                 <li className='mt-4'>
+                  <a href="/it">
                   <div className="fill-green-500  text-[#1c1e21] flex justify-start">
                     <div className="w-[32]">
                       <Graphic />
                     </div>
-                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-4
- under-ani"> Graphic Design</h2>
+                    <h2 className="text-[#22c55e] font-semibold text-lg underline-offset-  under-ani"> Graphic Design</h2>
                     <div className="">
                       <RightArrow />
                     </div>
                   </div>
+                  </a>
 
                 </li>
               </ul>
             </div>
           </li>
-          <li onClick={() => nav("projects")}  className="p-4 px-6 hover:bg-[#21262d] "> Projects </li>
-          <li onClick={() => nav("Skills")}  className="p-4 px-6 hover:bg-[#21262d] ">  Skills </li>
+          <li onClick={() => nav("projects")} className="p-4 px-6 hover:bg-[#21262d] "> Projects </li>
+          <li onClick={() => nav("Skills")} className="p-4 px-6 hover:bg-[#21262d] ">  Skills </li>
           <li className="p-4 px-6 hover:bg-[#21262d] ">Download Resume </li>
           <div
             className="p-4 flex items-center justify-center" >
