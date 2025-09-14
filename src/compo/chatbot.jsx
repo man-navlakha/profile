@@ -7,6 +7,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // --- ICONS (Removed CallIcon and MicIcon) ---
 const SendIcon = () => (<svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" /></svg>);
+const PulseIcon = () => ( <svg
+    fill="#000000"
+    width="30"
+    height="30"
+    viewBox="0 0 24 24"
+    id="plus"
+    data-name="Line Color"
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon line-color"
+  >
+    <path
+      id="primary"
+      d="M5,12H19M12,5V19"
+      style={{
+        fill: "none",
+        stroke: "rgb(0, 0, 0)",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+      }}
+    />
+  </svg>);
 const ClearChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white opacity-80 hover:opacity-100"><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><path d="M10 11v6" /><path d="M14 11v6" /></svg>);
 const ChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>);
 const CloseIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>);
@@ -476,7 +498,8 @@ if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
 
       {/* Input Area */}
       {!showHireForm && (
-        <motion.div className="bg-gray-100 p-3 flex items-center rounded-b-lg">
+        <motion.div className="bg-gray-100 px-3 py-2 flex items-center rounded-b-lg">
+          <button onClick={() => alert("Working on it ")} className="mx-1 w-11 h-11 rounded-full flex items-center justify-center text-black hover:bg-[#d9d9d9] transition-colors"><PulseIcon /></button>
           <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Type a message..." className="flex-1 py-2 px-4 rounded-full border-none focus:ring-2 focus:ring-[#128C7E] outline-none" />
           <button onClick={() => sendMessage(input)} className="ml-3 w-11 h-11 bg-[#128C7E] rounded-full flex items-center justify-center text-white hover:bg-[#075E54] transition-colors"><SendIcon /></button>
         </motion.div>
