@@ -9,6 +9,7 @@ import WEBD from './page/exp/WEB';
 import ANDROID from './page/exp/ANDROID';
 import PYHTON from './page/exp/PYHTON';
 import DESIGN from './page/exp/DESIGN';
+import ChatbotPopup from './compo/chatbot';
 function App() {
   return (
     <div>
@@ -17,7 +18,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
         <Route path='/' element={<Home />} />
         <Route path='/contect' element={<Cont />} />
-        <Route path='/chat' element={<Chatbot />} />
+        <Route path='/chat' element={<ChatbotPopup />} />
 
         {/* exp */}
         <Route path='/it' element={<IT />} />

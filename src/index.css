@@ -47,7 +47,9 @@ body::-webkit-scrollbar, .hide_scroll::-webkit-scrollbar {
     cursor: hidden;
 }
 
-
+body.no-scroll {
+  overflow: hidden;
+}
 
 body{
     cursor: url('./assets/Cursor-PNG-Pic.png'), auto;
