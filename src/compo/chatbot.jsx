@@ -38,8 +38,8 @@ const CopyIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="16" heigh
 
 // --- CHATBOT COMPONENT ---
 const Chatbot = () => {
-  const BACKEND_URL = 'http://127.0.0.1:8000';
-  //  const BACKEND_URL = 'https://backend-3j4r.onrender.com';
+  // const BACKEND_URL = 'http://127.0.0.1:8000';
+   const BACKEND_URL = 'https://backend-3j4r.onrender.com';
 
   const initialMessage = { sender: 'bot', text: "👋 Hi! I’m Man's assistant. Ask me anything about Man's experience.", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), suggestions: ["What are your skills?", "Tell me about your projects", "Walk me through your resume"] };
   const [messages, setMessages] = useState(() => {
