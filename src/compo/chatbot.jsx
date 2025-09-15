@@ -7,28 +7,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // --- ICONS (Removed CallIcon and MicIcon) ---
 const SendIcon = () => (<svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" /></svg>);
-const PulseIcon = () => ( <svg
-    fill="#000000"
-    width="30"
-    height="30"
-    viewBox="0 0 24 24"
-    id="plus"
-    data-name="Line Color"
-    xmlns="http://www.w3.org/2000/svg"
-    className="icon line-color"
-  >
-    <path
-      id="primary"
-      d="M5,12H19M12,5V19"
-      style={{
-        fill: "none",
-        stroke: "rgb(0, 0, 0)",
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
-        strokeWidth: 2,
-      }}
-    />
-  </svg>);
+const PulseIcon = () => (<svg
+  fill="#000000"
+  width="30"
+  height="30"
+  viewBox="0 0 24 24"
+  id="plus"
+  data-name="Line Color"
+  xmlns="http://www.w3.org/2000/svg"
+  className="icon line-color"
+>
+  <path
+    id="primary"
+    d="M5,12H19M12,5V19"
+    style={{
+      fill: "none",
+      stroke: "rgb(0, 0, 0)",
+      strokeLinecap: "round",
+      strokeLinejoin: "round",
+      strokeWidth: 2,
+    }}
+  />
+</svg>);
 const ClearChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white opacity-80 hover:opacity-100"><path d="M3 6h18" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /><path d="M10 11v6" /><path d="M14 11v6" /></svg>);
 const ChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>);
 const CloseIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>);
@@ -59,39 +59,45 @@ const Chatbot = () => {
   const chatboxEndRef = useRef(null);
 
   const DocumentBubble = ({ data }) => {
-    const { fileName, fileUrl, fileSize, fileType } = data;
+    const { fileName, fileUrl, fileSize, fileType, time } = data;
 
     return (
-      <div className="bg-[#005C4B] text-white p-3 rounded-lg max-w-[85%]">
-        <div className="flex items-center gap-3">
-          <div className="bg-white/20 p-2 rounded-lg">
-            <FileIcon />
+      <motion.div
+        className="bg-emerald-600 text-white p-2 text-right text-xs  rounded-xl max-w-[95%] shadow-lg hover:shadow-xl"
+      >
+        <div className='bg-white/20 p-3 rounded-xl text-md backdrop-blur-sm' >
+
+
+          <div className="flex text-left items-center gap-3">
+            <motion.div
+              className=" p-1 rounded-xl"
+            >
+              <FileIcon />
+            </motion.div>
+            <div className="flex-grow text-md ">
+              <p className="font-semibold break-all">{fileName}</p>
+              <p className="text-xs text-white/80">{fileSize}, {fileType}</p>
+            </div>
           </div>
-          <div className="flex-grow">
-            <p className="font-bold break-all">{fileName}</p>
-            <p className="text-xs text-white/80">{fileSize} · {fileType}</p>
+          <div className="grid grid-cols-1 border-t pt-2 gap-2 mt-4">
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href={fileUrl}
+              download={fileName}
+              className="text-center py-2.5 bg-white/20 backdrop-blur-sm text-md hover:bg-white/30 transition-all duration-200 rounded-lg font-medium"
+            >
+              Download
+            </motion.a>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-px mt-3 bg-white/30 rounded-b-lg overflow-hidden">
-          <a
-            href={fileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-center py-2 bg-[#005C4B] hover:bg-[#027564] transition-colors"
-          >
-            Open
-          </a>
-          <a
-            href={fileUrl}
-            download={fileName}
-            className="text-center py-2 bg-[#005C4B] hover:bg-[#027564] transition-colors"
-          >
-            Save as...
-          </a>
-        </div>
-      </div>
+        {time}
+      </motion.div>
     );
   };
+
+
   useEffect(() => {
     // We don't save if it's just the initial default message
     if (messages.length > 1) {
@@ -125,13 +131,19 @@ const Chatbot = () => {
     }).catch(err => console.error('Failed to copy text: ', err));
   };
 
-  const TypingIndicator = () => (
-    <div className="flex items-center space-x-1.5">
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.3s]"></div>
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse [animation-delay:-0.15s]"></div>
-      <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
-    </div>
-  );
+  const TypingIndicator = () => {
+    return (
+      <div class="flex flex-row gap-2 p-4">
+        <div class="w-2 h-2 rounded-full bg-gray-500 animate-bounce"></div>
+        <div
+          class="w-2 h-2 rounded-full bg-gray-500 animate-bounce [animation-delay:-.3s]"
+        ></div>
+        <div
+          class="w-2 h-2 rounded-full bg-gray-500 animate-bounce [animation-delay:-.5s]"
+        ></div>
+      </div>
+    );
+  };
   // src/components/ChatbotPopup.jsx -> inside the Chatbot component
   const displayFinalResponse = async (finalResponseString) => {
     const suggestionSeparator = '|||SUGGESTIONS|||';
@@ -152,7 +164,7 @@ const Chatbot = () => {
       const firstMessage = {
         sender: 'bot',
         text: messageBubbles[0] || "Sorry, I had trouble generating a response.",
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true }),
         suggestions: messageBubbles.length === 1 ? parsedSuggestions : [],
       };
       return [...updated, firstMessage];
@@ -164,7 +176,7 @@ const Chatbot = () => {
       const nextMessage = {
         sender: 'bot',
         text: messageBubbles[i],
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true }),
         suggestions: isLastBubble ? parsedSuggestions : [],
       };
       setMessages(prev => [...prev, nextMessage]);
@@ -187,13 +199,13 @@ const Chatbot = () => {
     const userMessage = {
       sender: 'user',
       text: messageText,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })
     };
 
     const botPlaceholder = {
       sender: 'bot',
       text: '...',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true }),
       suggestions: []
     };
 
@@ -225,50 +237,50 @@ const Chatbot = () => {
 
 
 
-// TOOL CALL: Generate Sticker
-if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
-    setMessages(prev => {
-        const updated = [...prev];
-        updated[updated.length - 1].text = "Creating a little something for you...";
-        return updated;
-    });
+      // TOOL CALL: Generate Sticker
+      if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
+        setMessages(prev => {
+          const updated = [...prev];
+          updated[updated.length - 1].text = "Creating a little something for you...";
+          return updated;
+        });
 
-    // Extract the JSON part of the tool call
-    const jsonString = fullResponse.substring(fullResponse.indexOf('{'), fullResponse.lastIndexOf('}') + 1);
-    const { prompt } = JSON.parse(jsonString);
+        // Extract the JSON part of the tool call
+        const jsonString = fullResponse.substring(fullResponse.indexOf('{'), fullResponse.lastIndexOf('}') + 1);
+        const { prompt } = JSON.parse(jsonString);
 
-    // Call your backend to generate the image and get a URL
-    const imageGenResponse = await axios.post(`${BACKEND_URL}/api/generate-sticker/`, { prompt });
-    const imageUrl = imageGenResponse.data.imageUrl;
+        // Call your backend to generate the image and get a URL
+        const imageGenResponse = await axios.post(`${BACKEND_URL}/api/generate-sticker/`, { prompt });
+        const imageUrl = imageGenResponse.data.imageUrl;
 
-    // Now, call the chat API again to formulate a response *with* the image
-    const historyForFollowUp = [
-        ...newMessages, // The original user message
-        { role: "model", parts: [{ text: fullResponse }] }, // The model's decision to call the tool
-        {
+        // Now, call the chat API again to formulate a response *with* the image
+        const historyForFollowUp = [
+          ...newMessages, // The original user message
+          { role: "model", parts: [{ text: fullResponse }] }, // The model's decision to call the tool
+          {
             role: "user", // A new user part explaining the tool's result
             parts: [{
-                text: `Here is the sticker you requested: ${imageUrl}. Please present this sticker to the user in Markdown format (![sticker](${imageUrl})) along with your original friendly message. **Remember to follow all original formatting rules, including providing suggestions.**`
+              text: `Here is the sticker you requested: ${imageUrl}. Please present this sticker to the user in Markdown format (![sticker](${imageUrl})) along with your original friendly message. **Remember to follow all original formatting rules, including providing suggestions.**`
             }]
-        }
-    ];
-    
-    // This part is the same as your other tool calls
-    const followUpResponse = await fetch(`${BACKEND_URL}/api/chat/`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ history: historyForFollowUp }),
-    });
+          }
+        ];
 
-    const followUpReader = followUpResponse.body.getReader();
-    let finalFullResponse = '';
-    while (true) {
-        const { value, done } = await followUpReader.read();
-        if (done) break;
-        finalFullResponse += decoder.decode(value, { stream: true });
-    }
-    fullResponse = finalFullResponse;
-}
+        // This part is the same as your other tool calls
+        const followUpResponse = await fetch(`${BACKEND_URL}/api/chat/`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ history: historyForFollowUp }),
+        });
+
+        const followUpReader = followUpResponse.body.getReader();
+        let finalFullResponse = '';
+        while (true) {
+          const { value, done } = await followUpReader.read();
+          if (done) break;
+          finalFullResponse += decoder.decode(value, { stream: true });
+        }
+        fullResponse = finalFullResponse;
+      }
 
 
 
@@ -309,7 +321,7 @@ if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
       const confirmationMsg = {
         sender: 'bot',
         text: "Thank you! Your request has been sent. Mann will get back to you shortly.",
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        time: new Date().toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })
       };
       setMessages(prev => [...prev, confirmationMsg]);
     } catch (error) {
@@ -345,109 +357,130 @@ if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
       </div>
 
 
+<div
+  className="flex-1 p-4 overflow-y-auto bg-gray-100"
+  style={{
+    backgroundImage: `url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')`,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'repeat'
+  }}
+>
+  <AnimatePresence>
+    {messages.map((msg, index) => {
+      const prev = messages[index - 1];
+      const next = messages[index + 1];
 
-      {/* Chatbox */}
-   <div className="flex-1 p-3 overflow-y-auto bg-gray-200" style={{ backgroundImage: `url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')` }}>
-      <AnimatePresence>
-        {messages.map((msg, index) => {
-          // --- All this setup logic remains the same ---
-          const prevMessage = messages[index - 1];
-          const nextMessage = messages[index + 1];
-          const isFirstInGroup = !prevMessage || prevMessage.sender !== msg.sender;
-          const isLastInGroup = !nextMessage || nextMessage.sender !== msg.sender;
-          let cornerClasses = '';
-          let isDocument = msg.text.startsWith('[DOCUMENT:');
-          let docData = null;
-            if (isDocument) {
-              try {
-                // Extract and parse the JSON from the tag
-                const jsonString = msg.text.substring(10, msg.text.length - 1);
-                docData = JSON.parse(jsonString);
-              } catch (e) {
-                console.error("Failed to parse document JSON", e);
-                isDocument = false; // Fallback to rendering as text if parsing fails
-              }
-            }
-           if (msg.sender === 'user') {
-             if (isFirstInGroup && isLastInGroup) cornerClasses = 'rounded-2xl'; else if (isFirstInGroup) cornerClasses = 'rounded-t-2xl rounded-bl-2xl'; else if (isLastInGroup) cornerClasses = 'rounded-b-2xl rounded-tl-2xl'; else cornerClasses = 'rounded-l-2xl';
-          } else { if (isFirstInGroup && isLastInGroup) cornerClasses = 'rounded-2xl'; else if (isFirstInGroup) cornerClasses = 'rounded-t-2xl rounded-br-2xl'; else if (isLastInGroup) cornerClasses = 'rounded-b-2xl rounded-tr-2xl'; else cornerClasses = 'rounded-r-2xl'; }
-          const bgColor = msg.sender === 'user' ? 'bg-[#DCF8C6]' : 'bg-white';
-          const margin = isLastInGroup ? 'mb-2' : 'mb-0.5';
-          if (msg.sender === 'bot' && msg.text === '...' && !loading) return null;
-          
-          // ✨ NEW: A clear flag to check if we should show suggestions on this specific message
-          const showSuggestions = msg.sender === 'bot' && isLastInGroup && msg.suggestions?.length > 0;
+      const isFirst = !prev || prev.sender !== msg.sender;
+      const isLast = !next || next.sender !== msg.sender;
 
-            return (
-                     
-<motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className={`flex ${margin} ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
-            >
-              {isDocument ? (
-                <DocumentBubble data={docData} />
-              ) : (
-                // ✨ MODIFIED: The main bubble is now a flex container for text AND buttons.
-                // Note the padding is removed (p-0) and overflow is hidden.
-                <div className={`flex flex-col max-w-[85%] shadow-sm ${bgColor} ${cornerClasses} overflow-hidden`}>
-                  
-                  {/* --- This is the original text part of the bubble --- */}
-                  <div className="px-3">
-                    {loading && msg.sender === 'bot' && msg.text === '...' ? (
-                      <TypingIndicator />
-                    ) : (
-                      <div className="prose prose-sm max-w-none relative group">
+      let isDocument = msg.text.startsWith('[DOCUMENT:');
+      let docData = null;
 
-                       
-                      <button
-                        onClick={() => handleCopy(msg.text)}
-                        className="absolute top-1 right-1 p-1.5 bg-gray-200 rounded-full text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity"
-                        title="Copy text"
-                      >
-                        <CopyIcon />
-                      </button>
-                       <ReactMarkdown
-                        components={{
-                          a: ({ node, ...props }) => <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" />,
+      if (isDocument) {
+        try {
+          const jsonString = msg.text.slice(10, -1);
+          docData = JSON.parse(jsonString);
+        } catch (err) {
+          console.error("Failed to parse document JSON", err);
+          isDocument = false;
+        }
+      }
 
-                          img: ImageRenderer
-                        }}
-                      >
-                        {msg.text || '...'}
-                      </ReactMarkdown>
-                      </div>
-                    )}
-                    {msg.text && msg.text !== '...' && <p className="text-right text-[10px] text-gray-500 mt-1">{msg.time}</p>}
+      const isUser = msg.sender === 'user';
+      const alignment = isUser ? 'justify-end' : 'justify-start';
+
+      const cornerStyles = isFirst && isLast
+        ? 'rounded-2xl'
+        : isFirst
+        ? isUser
+          ? 'rounded-t-2xl rounded-bl-2xl'
+          : 'rounded-t-2xl rounded-br-2xl'
+        : isLast
+        ? isUser
+          ? 'rounded-b-2xl rounded-tl-2xl'
+          : 'rounded-b-2xl rounded-tr-2xl'
+        : isUser
+        ? 'rounded-l-2xl'
+        : 'rounded-r-2xl';
+
+      const bgColor = isUser ? 'bg-[#DCF8C6]' : 'bg-white text-black';
+      const marginBottom = isLast ? 'mb-3' : 'mb-1';
+      const showSuggestions = msg.sender === 'bot' && isLast && msg.suggestions?.length > 0 && index === messages.length - 1;
+
+      if (msg.sender === 'bot' && msg.text === '...' && !loading) return null;
+
+      return (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
+          className={`flex ${alignment} ${marginBottom}`}
+        >
+          {isDocument ? (
+            <DocumentBubble data={{ ...docData, time: msg.time }} />
+          ) : (
+            <div className={`flex flex-col max-w-[85%] shadow-sm ${bgColor} ${cornerStyles} overflow-hidden`}>
+              <div className="px-3 py-2">
+                {loading && msg.sender === 'bot' && msg.text === '...' ? (
+                  <TypingIndicator />
+                ) : (
+                  <div className="prose prose-sm max-w-none relative group">
+                    <button
+                      onClick={() => handleCopy(msg.text)}
+                      className="absolute top-1 right-1 p-1.5 bg-gray-200 rounded-full text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                      title="Copy text"
+                    >
+                      <CopyIcon />
+                    </button>
+                    <ReactMarkdown
+                      components={{
+                        a: ({ node, ...props }) => (
+                          <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline" />
+                        ),
+                        img: ImageRenderer
+                      }}
+                    >
+                      {msg.text || '...'}
+                    </ReactMarkdown>
                   </div>
+                )}
+                {msg.text && msg.text !== '...' && (
+                  <p className="text-right text-[10px] text-gray-500 mt-1">{msg.time}</p>
+                )}
+              </div>
 
-                  {/* ✨ NEW: Conditionally render suggestions INSIDE the message bubble */}
-                  {showSuggestions && (
-                    <div className="border-t border-black/10 ">
-                      {msg.suggestions.map((q, i) => (
-                        <button
-                          key={i}
-                          onClick={() => handleSuggestionClick(q)}
-                          // ✨ NEW STYLING: Full-width buttons instead of pills
-                          className="w-full text-center py-2.5 px-3 text-blue-600 font-medium hover:bg-black/5 transition-colors first:border-t-0 border-t border-black/10"
-                        >
-                          {q}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                </div>
+              {/* 💬 Suggestions */}
+              {showSuggestions && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex gap-1 flex-col px-3 pb-3 mt-2"
+                >
+                  {msg.suggestions.map((suggestion, i) => (
+                    <motion.button
+                      key={i}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.1 * i }}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="px-4 py-2 bg-gray-50/30 text-gray-700 hover:text-gray-900 rounded-md text-sm font-medium border border-gray-200 transition duration-200 shadow-sm"
+                    >
+                      {suggestion} ⤴
+                    </motion.button>
+                  ))}
+                </motion.div>
               )}
-            </motion.div>
-          );
-        })}
-      </AnimatePresence>
-      <div ref={chatboxEndRef} />
-    </div>
+            </div>
+          )}
+        </motion.div>
+      );
+    })}
+  </AnimatePresence>
+  <div ref={chatboxEndRef} />
+</div>
 
 
 
@@ -500,7 +533,15 @@ if (fullResponse.includes('[TOOL_CALL:GENERATE_STICKER:')) {
       {!showHireForm && (
         <motion.div className="bg-gray-100 px-3 py-2 flex items-center rounded-b-lg">
           <button onClick={() => alert("Working on it ")} className="mx-1 w-11 h-11 rounded-full flex items-center justify-center text-black hover:bg-[#d9d9d9] transition-colors"><PulseIcon /></button>
-          <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Type a message..." className="flex-1 py-2 px-4 rounded-full border-none focus:ring-2 focus:ring-[#128C7E] outline-none" />
+         <textarea
+  value={input}
+  onChange={(e) => setInput(e.target.value)}
+  onKeyDown={handleKeyDown}
+  placeholder="Type a message"
+  rows={1}
+  className="flex-1 resize-none py-2 px-4 rounded-full border-none focus:ring-2 focus:ring-[#128C7E] outline-none overflow-hidden"
+/>
+
           <button onClick={() => sendMessage(input)} className="ml-3 w-11 h-11 bg-[#128C7E] rounded-full flex items-center justify-center text-white hover:bg-[#075E54] transition-colors"><SendIcon /></button>
         </motion.div>
       )}
@@ -525,7 +566,7 @@ const ChatbotPopup = ({ isOpen, setIsOpen }) => {
             className="fixed bottom-24 right-5 z-50"
             style={{
               width: 'clamp(300px, 94vw, 950px)',
-              height: 'clamp(600px, 83vh, 900px)',
+              height: 'clamp(600px, 73vh, 900px)',
             }}
           >
             {/* You would have another component here for the chat UI */}
@@ -541,7 +582,7 @@ const ChatbotPopup = ({ isOpen, setIsOpen }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleChat}
-        className="fixed bottom-5 right-5 w-16 h-16 bg-[#075E54] text-white rounded-full flex items-center justify-center shadow-xl z-50 cursor-pointer"
+        className="fixed bottom-5 right-5 w-11 h-11 md:w-13 md:h-13 lg:w-16 lg:h-16 text-xl lg:text-3xl bg-[#075E54] text-white rounded-full flex items-center justify-center shadow-xl z-50 cursor-pointer"
         title={isOpen ? 'Close Chat' : 'Open Chat'}
       >
         <AnimatePresence initial={false}>
@@ -552,7 +593,7 @@ const ChatbotPopup = ({ isOpen, setIsOpen }) => {
             exit={{ opacity: 0, rotate: 30, scale: 0.5 }}
             transition={{ duration: 0.2 }}
           >
-            {isOpen ? <CloseIcon /> : <ChatIcon />}
+            {isOpen ? '🗙' : '🗨️'}
           </motion.div>
         </AnimatePresence>
       </motion.button>
