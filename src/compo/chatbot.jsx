@@ -12,7 +12,66 @@ const ClearChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" 
 const LeftArrow = () => (<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" id="left" data-name="Flat Color" className="icon flat-color"><path id="primary" d="M21,11H5.41l5.3-5.29A1,1,0,1,0,9.29,4.29l-7,7a1,1,0,0,0,0,1.42l7,7a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L5.41,13H21a1,1,0,0,0,0-2Z" style={{ fill: "rgba(0, 0, 0, 1)" }} /></svg>);
 const FileIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>);
 const CopyIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>);
+const Check2 = () => (
+  <svg
+    fill="#2970ccff"
+    width="14px"
+    height="14px"
+    viewBox="0 0 24 24"
+    id="check-double"
+    data-name="Line Color"
+    xmlns="http://www.w3.org/2000/svg"
+    className="icon line-color"
+  >
+    <line
+      id="secondary"
+      x1={13.22}
+      y1={16.5}
+      x2={21}
+      y2={7.5}
+      style={{
+        fill: "none",
+        stroke: "#2970ccff",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+      }}
+    />
+    <polyline
+      id="primary"
+      points="3 11.88 7 16.5 14.78 7.5"
+      style={{
+        fill: "none",
+        stroke: "#2970ccff",
+        strokeLinecap: "round",
+        strokeLinejoin: "round",
+        strokeWidth: 2,
+      }}
+    />
+  </svg>) 
 
+
+const Clock = () => (
+   <svg
+    width="14px"
+    height="14px"
+    viewBox="0 0 1024 1024"
+    className="icon"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#ffffffff"
+      d="M512 896a384 384 0 100-768 384 384 0 000 768zm0 64a448 448 0 110-896 448 448 0 010 896z"
+    />
+    <path
+      fill="#ffffffff"
+      d="M480 256a32 32 0 0132 32v256a32 32 0 01-64 0V288a32 32 0 0132-32z"
+    />
+    <path
+      fill="#fff"
+      d="M480 512h256q32 0 32 32t-32 32H480q-32 0-32-32t32-32z"
+    />
+  </svg>) 
 
 const Chatbot = () => {
   // --- SECURITY ENHANCEMENT 1: Use Environment Variables ---
@@ -267,7 +326,7 @@ const Chatbot = () => {
                           </ReactMarkdown>
                         </div>
                       )}
-                      {msg.text && msg.text !== '...' && (<p className="text-right text-[10px] text-gray-500 mt-1">{msg.time}</p>)}
+                      {msg.text && msg.text !== '...' && (<p className="text-right text-[10px] text-gray-500 mt-1 flex justify-end items-center gap-1">{msg.time} {isUser &&<Check2 />}</p>)}
                     </div>
 
                     {showSuggestions && ( /* Suggestions rendering unchanged */
