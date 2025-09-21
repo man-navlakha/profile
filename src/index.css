@@ -13,6 +13,11 @@ body{
     
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 .tm_man_open{
     max-height: 540px;
     transition: max-height 5s ease-in-out;

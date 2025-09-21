@@ -64,6 +64,45 @@
 
 
 
+.hover-arrow::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10%;
+    height: 0;
+    bottom: -10%;
+    background-color: #1c1e21;
+    border-radius: 50%;
+    transition: width 0.3s ease, height 0.3s ease, top 0.3s ease;
+    z-index: 0;
+    color: #fff !important;
+}
+
+.hover-arrow:hover::before {
+    top: 50%;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.hover-arrow span, .hover-arrow i {
+    position: relative;
+    z-index: 1;
+    /* color: #fff; */
+}
+
+body, .hide_scroll {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;    /* Firefox */
+}
+
+body::-webkit-scrollbar, .hide_scroll::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }

@@ -1,16 +1,42 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import RightArrow from './svg/right';
+import { motion } from "framer-motion";
+import RightArrow from "./svg/right";
 
-function scrollLeft() {
-  const cont = document.getElementById('cardCont');
-  cont.scrollBy({ left: -330, behavior: 'smooth' });
+// Scroll helper
+function scrollByAmount(amount) {
+  const cont = document.getElementById("cardCont");
+  if (cont) cont.scrollBy({ left: amount, behavior: "smooth" });
 }
 
-function scrollRight() {
-  const cont = document.getElementById('cardCont');
-  cont.scrollBy({ left: 330, behavior: 'smooth' });
-}
+// Reusable Project Card
+const ProjectCard = ({ category, title, description, links, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.15 }}
+    whileHover={{ scale: 1.03 }}
+    className="bg-white w-[312px] p-6 rounded-2xl shadow-md flex-shrink-0 flex flex-col transition"
+  >
+    <h2 className="text-sm text-gray-500 mb-1">{category}</h2>
+    <h3 className="text-2xl font-bold mb-2">{title}</h3>
+    <p className="text-gray-700 mb-4 text-sm leading-relaxed">{description}</p>
+    <div className="mt-auto flex flex-wrap gap-3">
+      {links.map((link, i) => (
+        <a
+          key={i}
+          className={`${link.style} flex items-center gap-1`}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link.label}
+          {link.icon && <RightArrow />}
+        </a>
+      ))}
+    </div>
+  </motion.div>
+);
 
 const Projects = () => {
   const location = useLocation();
@@ -23,179 +49,158 @@ const Projects = () => {
       }
     }
   }, [location]);
+
   return (
-    <div id="projects" className="cont cardCont hide_scroll p-6">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-        <div className="mb-6 w-[312px] p-2 px-12 md:mb-0">
-          <h1 className="text-3xl sm:text-2xl font-bold mb-2 w-full whitespace-normal break-words">
+    <div className="project projectBox hide_scroll">
+      <div className="flex flex-col h-screen p-6 md:flex-row items-center justify-center lg:justify-between">
+
+        {/* Left section */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-6 w-[312px] lg:w-[526px] p-2 px-6 md:mb-0"
+        >
+          <h1 className="text-3xl lg:text-5xl font-bold mb-3 leading-snug">
             Professional Experience Gained Through BCA Projects
           </h1>
-          <p className="text-lg text-gray-600 mb-4">
-            Gain real-world experience by working on practical projects throughout your BCA program
+          <p className="text-lg lg:text-xl text-gray-600 mb-6">
+            Gain real-world experience by working on practical projects throughout your BCA program.
           </p>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex space-x-3"
+          >
+            <button
+              aria-label="Scroll left"
+              onClick={() => scrollByAmount(-330)}
+              className="hidden md:hidden lg:block text-xl lg:text-2xl py-4 px-5 flex items-center justify-center whitespace-nowrap ease-in duration-150 m-2 border rounded-full border-[#1c1e21] rounded-full relative overflow-hidden hover-arrow  hover:text-white">
+              <span className='flex items-center'>  <i className="fas fa-chevron-left"></i></span>
+            </button>
+            <button
+              aria-label="Scroll right"
+              onClick={() => scrollByAmount(330)}
+              className="hidden md:hidden lg:block text-xl lg:text-2xl py-4 px-5 flex items-center justify-center whitespace-nowrap ease-in duration-150 m-2 border rounded-full border-[#1c1e21] rounded-full relative overflow-hidden hover-arrow  hover:text-white">
+              <span className='flex items-center'>  <i className="fas fa-chevron-right"></i></span>
+            </button>
+          </motion.div>
+        </motion.div>
 
-          <div>
-            <div className="flex space-x-2 text-xl">
-              <button className="px-4 py-3 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollLeft}>
-                <i className="fas fa-chevron-left"></i>
-              </button>
-              <button className="px-4 py-3 flex items-center justify-center border border-gray-400 rounded-full" onClick={scrollRight}>
-                <i className="fas fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div id="cardCont" className="flex -m-4 overflow-x-auto block lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4">
-
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Web Development
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Pixel Class
-            </h3>
-            <p className="text-gray-700 mb-4">
-              A education note sharing Web-Application where student can Download and upload motes. <br />
-              Here i developed full fronted & Figma designs.
-            </p>
-            <div className="mt-auto flex justify-between"> {/* Pushes the link to the bottom */}
-              <a
-                className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
-                href="https://pixelclass.netlify.app/"
-              >
-                Visit Site
-              </a>
-              <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/pxc"
-              >
-                View Project
-                <RightArrow />
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Web Development
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Solvinger
-            </h3>
-            <p className="text-gray-700 mb-4">
-              A AI model for code review, For write something & all these features. <br />
-              Here i developed full fronted parts with ReactJs.
-            </p>
-            <div className="mt-auto flex justify-between"> {/* Pushes the link to the bottom */}
-              <a
-                className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
-                href="https://mysolvingerai.vercel.app/"
-              >
-                Visit Site
-              </a>
-              <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/solvinger"
-              >
-                View Project
-                <RightArrow />
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Web Development
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Career System
-            </h3>
-            <p className="text-gray-700 mb-4">
-              i developed a career system at "HarSar Innovations" using react js the same design they provided me on figma, & added Deployed on vercel.
-            </p>
-            <div className="mt-auto flex justify-between">
-              <a
-                className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
-                href="https://career-intern.vercel.app/"
-              >
-                Visit Site
-              </a>
-             
-              <a
-                className="text-green-500 border border-gray-500/50 hover:bg-green-800/20 hover:text-green-900  w-max px-3 py-1 rounded-xl  flex items-center"
-                href="https://server-eight-lac.vercel.app/"
-              >
-                Visit API
-              </a>
-             
-            </div>
-          </div>
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Windows App
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              System App for Windows
-            </h3>
-            <p className="text-gray-700 mb-4">
-              In this app we will show the system information of the windows.
-            </p>
-            <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/system-app"
-              >
-                View Project
-                <RightArrow />
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Website
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Portfolio
-            </h3>
-            <p className="text-gray-700 mb-4">
-              This is my portfolio website. I have made this website using ReactJs and TailwindCSS.
-            </p>
-            <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/profile"
-              >
-                View Project
-                <RightArrow />
-              </a>
-            </div>
-          </div>
-
-
-          <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
-            <h2 className="text-sm text-gray-500 mb-1">
-              Windows Tray App
-            </h2>
-            <h3 className="text-2xl font-bold mb-2">
-              Rent PC Security App for Windows
-            </h3>
-            <p className="text-gray-700 mb-4">
-              In this app we will show the shop & company details & massage from the Shop & comapny. This app is made in python.
-            </p>
-            <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              <a
-                className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/psr"
-              >
-                View Project
-                <RightArrow />
-              </a>
-            </div>
-          </div>
-
-        </div>
+        {/* Right section - animated project cards */}
+        <motion.div
+          id="cardCont"
+          className="flex h-full min-h-[326px] py-3 max-h-[326px] overflow-y-hidden overflow-x-auto lg:w-[1080px] md:w-[320px] max-w-full p-4 space-x-4 scrollbar-hide"
+        >
+          {[
+            {
+              category: "Web Development",
+              title: "Pixel Class",
+              description:
+                "An education note-sharing web application where students can download and upload notes. I developed the full frontend & Figma designs.",
+              links: [
+                {
+                  label: "Visit Site",
+                  href: "https://pixelclass.netlify.app/",
+                  style:
+                    "text-green-500 border border-gray-400 hover:bg-green-100 px-3 py-1 rounded-xl",
+                },
+                {
+                  label: "View Project",
+                  href: "https://github.com/man-navlakha/pxc",
+                  style: "text-blue-500 underline",
+                  icon: true,
+                },
+              ],
+            },
+            {
+              category: "Web Development",
+              title: "Solvinger",
+              description:
+                "An AI model for code review with multiple features. I developed the complete frontend with ReactJS.",
+              links: [
+                {
+                  label: "Visit Site",
+                  href: "https://mysolvingerai.vercel.app/",
+                  style:
+                    "text-green-500 border border-gray-400 hover:bg-green-100 px-3 py-1 rounded-xl",
+                },
+                {
+                  label: "View Project",
+                  href: "https://github.com/man-navlakha/solvinger",
+                  style: "text-blue-500 underline",
+                  icon: true,
+                },
+              ],
+            },
+            {
+              category: "Web Development",
+              title: "Career System",
+              description:
+                'A career system developed at "HarSar Innovations" using ReactJS, based on their Figma designs. Deployed on Vercel.',
+              links: [
+                {
+                  label: "Visit Site",
+                  href: "https://career-intern.vercel.app/",
+                  style:
+                    "text-green-500 border border-gray-400 hover:bg-green-100 px-3 py-1 rounded-xl",
+                },
+                {
+                  label: "Visit API",
+                  href: "https://server-eight-lac.vercel.app/",
+                  style:
+                    "text-green-500 border border-gray-400 hover:bg-green-100 px-3 py-1 rounded-xl",
+                },
+              ],
+            },
+            {
+              category: "Windows App",
+              title: "System App for Windows",
+              description:
+                "An application that displays system information of Windows machines.",
+              links: [
+                {
+                  label: "View Project",
+                  href: "https://github.com/man-navlakha/system-app",
+                  style: "text-blue-500 underline",
+                  icon: true,
+                },
+              ],
+            },
+            {
+              category: "Website",
+              title: "Portfolio",
+              description:
+                "My personal portfolio website built with ReactJS and TailwindCSS.",
+              links: [
+                {
+                  label: "View Project",
+                  href: "https://github.com/man-navlakha/profile",
+                  style: "text-blue-500 underline",
+                  icon: true,
+                },
+              ],
+            },
+            {
+              category: "Windows Tray App",
+              title: "Rent PC Security App",
+              description:
+                "A Windows tray app built with Python that shows shop & company details, including messages from them.",
+              links: [
+                {
+                  label: "View Project",
+                  href: "https://github.com/man-navlakha/psr",
+                  style: "text-blue-500 underline",
+                  icon: true,
+                },
+              ],
+            },
+          ].map((project, index) => (
+            <ProjectCard key={index} {...project} index={index} />
+          ))}
+        </motion.div>
       </div>
     </div>
   );

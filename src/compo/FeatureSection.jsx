@@ -7,7 +7,7 @@ const FeatureSection = ({ title, description, image, action_value, action_link, 
       className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"
         } items-center gap-10 my-20`}
     >
-      <img src={image} alt={title} className="w-60 md:w-80 rounded-xl" />
+      <img src={image} alt={title} loading="lazy" className="w-60 md:w-80 rounded-xl" />
       <div className="text-left max-w-md">
 <h2 className="text-2xl font-bold mb-3">
   {title.split(" ").map((word, i) => (

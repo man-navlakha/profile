@@ -13,10 +13,10 @@ const Parshwanath = () => {
     <div>
       <Navbar />
       <div className="px-6 sm:px-10 py-8 w-full">
-      <div className="w-full max-w-screen rounded-3xl h-[90vh] sm:h-screen bg-cover bg-center relative m-2 sm:m-6 flex flex-col sm:flex-row items-center justify-start bg-mobile-bg sm:bg-desktop-bg">
+      <div loading="lazy" className="w-full max-w-screen rounded-3xl h-[90vh] sm:h-screen bg-cover bg-center relative m-2 sm:m-6 flex flex-col sm:flex-row items-center justify-start bg-mobile-bg sm:bg-desktop-bg">
 
           {/* Left Text Content */}
-          <div className="lg:w-1/2 text-left bg-gradient-to-b from-[#fcf5eb] via-[#fcf5eb]/80 to-[#fcf5eb]/0 lg:bg-gradient-to-r from-[#fcf5eb] via-[#fcf5eb]/60 to-transparent py-6 mt-0 md:mt-1  lg:-mt-1/2 lg:text-left mb-0 py-6 lg:mb-0">
+          <div  className="lg:w-1/2 text-left bg-gradient-to-b from-[#fcf5eb] via-[#fcf5eb]/80 to-[#fcf5eb]/0 lg:bg-gradient-to-r from-[#fcf5eb] via-[#fcf5eb]/60 to-transparent py-6 mt-0 md:mt-1  lg:-mt-1/2 lg:text-left mb-0 py-6 lg:mb-0">
                 <h1 className="text-4xl lg:text-4xl font-bold text-gray-900 px-12 py-2">
              Parshwanath Solutions
             </h1>
