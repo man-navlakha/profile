@@ -11,6 +11,7 @@ import PYHTON from './page/exp/PYHTON';
 import DESIGN from './page/exp/DESIGN';
 import ChatbotPopup from './compo/chatbot';
 import Windows from './page/exp/Windows';
+import Parshwanath from './page/project/Parshwanath';
 function App() {
   return (
     <div>
@@ -20,6 +21,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/contect' element={<Cont />} />
         <Route path='/chat' element={<Chatbot />} />
+
+        {/* Projects */}
+        <Route path='/ps' element={<Parshwanath />} />
 
         {/* exp */}
         <Route path='/it' element={<IT />} />

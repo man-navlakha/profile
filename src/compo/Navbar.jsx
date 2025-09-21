@@ -116,11 +116,11 @@ const Navbar = () => {
 
 
           <li className=""><a href="/it">
-            <div className="hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="min-h-full hover:bg-green-500 text-[#1c1e21]  fill-green-500 hover:fill-[#1c1e21]    hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <It />
               </div>
-              <h2 className="text-xl font-semibold mb-2">IT Technician</h2>
+              <h2 className="text-xl font-semibold mb-2">Parshwanath <br /> Solutions</h2>
               <p className=" mb-4 line-clamp-2">IT Hardware & software releted solutions</p>
               <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
@@ -131,11 +131,11 @@ const Navbar = () => {
           </li>
 
           <li className=""><a href="/web">
-            <div className="hover:bg-green-500 h-max   fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="min-h-full hover:bg-green-500 h-max   fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Web />
               </div>
-              <h2 className="text-xl font-semibold mb-2">Web Development</h2>
+              <h2 className="text-xl font-semibold mb-2">HarSar <br /> Innovations</h2>
               <p className=" mb-4 line-clamp-2">End-to-end web development support</p>
               <div className="">
                 {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
@@ -145,29 +145,29 @@ const Navbar = () => {
           </a>
           </li>
 
-          <li className=""><a href="/android">
-            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+          {/* <li className=""><a href="/android">
+            <div className="min-h-full hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Android />
               </div>
               <h2 className="text-xl font-semibold mb-2">Android Development</h2>
               <p className=" mb-4 line-clamp-2">A simple application using android studio</p>
               <div className="">
-                {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
+                
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </a>
           </li>
           <li className=""><a href="/windwos">
-            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="min-h-full hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Windows />
               </div>
               <h2 className="text-xl font-semibold mb-2">Windows Application</h2>
               <p className=" mb-4 line-clamp-2">A .net & c# application that makes business solutions</p>
               <div className="">
-                {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
+                
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
@@ -175,14 +175,14 @@ const Navbar = () => {
           </li>
 
           <li className=""><a href="/python">
-            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="min-h-full hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Python />
               </div>
               <h2 className="text-xl font-semibold mb-2">Python Development</h2>
               <p className=" mb-4 line-clamp-2">A windows application configration & development </p>
               <div className="">
-                {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
+               
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
@@ -190,19 +190,21 @@ const Navbar = () => {
           </li>
 
           <li className=""><a href="/design">
-            <div className="hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
+            <div className="min-h-full hover:bg-green-500  fill-green-500 hover:fill-[#1c1e21]    text-[#1c1e21] hover:border-[#111b21] w-[253px] p-4 border rounded-3xl border border-[#cec9c1] flex flex-col items-start">
               <div className="text-green-500 text-3xl mb-2 hover:">
                 <Graphic />
               </div>
               <h2 className="text-xl font-semibold mb-2">Graphic Design</h2>
               <p className=" mb-4 line-clamp-2">Designing Logo, Mockups, PNG icons, etc</p>
               <div className="">
-                {/* https://www.svgrepo.com/svg/459159/arrow-top-right  icon size - 64 , padding - 35%, Thinkness - 60%, color - # 1c1e21 */}
+              
                 <svg width="40px" height="40px" viewBox="-8.75 -8.75 42.50 42.50" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(1, 0, 0, 1, 0, 0)rotate(45)"><g id="SVGRepo_bgCarrier"></g><g id="SVGRepo_tracerCarrier" ></g><g id="SVGRepo_iconCarrier"> <path d="M9 8.5H16.5V16" stroke="#1c1e21"></path> <path d="M16.5 8.5L7 18" stroke="#1c1e21"></path> </g></svg>
               </div>
             </div>
           </a>
-          </li>
+          </li> */}
+
+          
         </ul>
       </nav>
 

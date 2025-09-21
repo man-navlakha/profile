@@ -91,19 +91,19 @@ const Fea = () => {
             Experienced IT Support professional with a proven track record of maintaining 99.9% system uptime and resolving 60+ hardware/software issues to enhance reliability. Skilled in Windows/Linux OS configuration, Office 365 support, and managing service desk operations with high customer satisfaction. Strong documentation abilities and hands-on expertise in IT hardware installation and maintenance.
             </p>
             <div className="mt-auto"> {/* Pushes the link to the bottom */}
-              {/* <a
+              <a
                 className="text-blue-500 underline flex items-center"
-                href="https://github.com/man-navlakha/system-app"
+                href="ps"
               >
                 View Project
                 <RightArrow />
-              </a> */}
+              </a>
             </div>
           </div>
 
           <div className="bg-white w-[312px] p-6 rounded-lg shadow-md flex-shrink-0 flex flex-col">
              <h2 className="text-sm text-gray-500 mb-1">
-             March 2025 - Present · 1 mos
+             March 2025 · 1 mos
             </h2>
             <h3 className="text-2xl font-bold mb-2">
             Website Developer Intern

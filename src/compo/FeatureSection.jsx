@@ -9,18 +9,18 @@ const FeatureSection = ({ title, description, image, action_value, action_link, 
     >
       <img src={image} alt={title} className="w-60 md:w-80 rounded-xl" />
       <div className="text-left max-w-md">
-        <h2 className="text-2xl font-bold mb-3">
-          {title.split(" ").map((word, i) =>
-            word.includes("privacy") || word.includes("lock") || word.includes("Silence") ? (
-              <span key={i} className="text-green-500">{word} </span>
-            ) : (
-              <span key={i}>{word} </span>
-            )
-          )}
-        </h2>
+<h2 className="text-2xl font-bold mb-3">
+  {title.split(" ").map((word, i) => (
+    <span key={i} className={i === 0 ? "text-green-600" : ""}>
+      {word}{" "}
+    </span>
+  ))}
+</h2>
 
 
-        <p className="text-gray-300">{description}</p>
+
+
+        <p className="text-gray-600">{description}</p>
         {
           action_value && action_link && (
 
